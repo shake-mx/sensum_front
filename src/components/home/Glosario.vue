@@ -1,12 +1,12 @@
 <template>
   <b-col cols="12" md="6">
     <h2 class="font-weight-bold py-3 text-center titulo-valores">
-      EL JARDÍN SECRETO
+      El Jardín Secreto
     </h2>
     <b-col cols="10" class="tarjeta my-4 mx-auto">
       <b-row>
         <b-col cols="12">
-          <h4 class="font-weight-bold my-5 text-center subtitulo-valores">
+          <h4 class="font-weight-bold my-5 text-center subtitulo-valores descripcion">
             "...el mundo esta hecho de flores..."
           </h4>
         </b-col>
@@ -21,7 +21,7 @@
           </div>
         </b-col>
         <b-col cols="12" >
-          <h5 class="my-4  text-md-center text-justify ">
+          <h5 class="my-4  text-center  descripcion">
             Descubre semana a semana más de las flores y plantas
           </h5>
         </b-col>
@@ -40,12 +40,8 @@ export default {
 
 <style lang="scss" scoped>
 
-.tarjeta {
-  border-color: $primario;
-  border-radius: 1rem;
-  background-color: white;
-  box-shadow: 4px 4px 4px 4px rgba(87, 54, 85, 0.2);
-  height: 45rem;
+.descripcion{
+  height: 3rem;
 }
 
 </style>

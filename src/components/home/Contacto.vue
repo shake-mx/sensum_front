@@ -1,9 +1,9 @@
 <template>
   <b-container class="container p-md-5">
     <b-row class="justify-content-md-center tarjeta">
-      <b-col cols="12" md="8" class="border px-md-5 rounded ">
+      <b-col cols="12" md="8" class=" px-md-5  ">
         <h2 class="display-6 font-weight-bold py-5" align="center">
-          ENVÍANOS UN MENSAJE
+          Envíanos un Mensaje
         </h2>
         <b-form class="forma">
           <b-row>
@@ -257,7 +257,7 @@ export default {
 }
 
 .btn-primary {
-  color: $secundario;
+  color: $primario;
   border-color: $gris;
   position: relative;
   overflow: hidden;
@@ -267,19 +267,19 @@ export default {
 }
 
 .btn-primary:hover {
-  color: $primario;
+  color: $secundario;
   background-color: #fff !important;
-  border-color: $secundario;
+  border: none;
 }
 
 .btn-primary:active {
-  color: $primario !important;
+  color: $secundario !important;
   background-color: rgba(255, 255, 255, 0.95) !important;
   border-color: rgba(28, 86, 50, 0.1) !important;
 }
 
 .btn-primary:focus {
-  color: $primario !important;
+  color: $secundario !important;
   background-color: rgba(255, 255, 255, 0.95) !important;
   border-color: rgba(28, 86, 50, 0.1) !important;
 }

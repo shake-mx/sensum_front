@@ -1,0 +1,11 @@
+
+version: '3'
+services:
+  peonyfront:
+    container_name: peonyfront
+    build: .
+    # command: http-server dist
+    # command: npm run serve
+    command: serve -s dist
+    ports:
+    - 5000:5000

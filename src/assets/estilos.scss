@@ -2,9 +2,16 @@
 // PATRONES DE COLORES
 //---------------------------------------
 $primario: rgba(51, 51, 51);
-$secundario: rgb(250,209,165);
+$secundario: rgb(28,186,164);
 $texto: rgb(255,255,255);
 $gris: #CED4D9;
+
+@font-face {
+  font-family: "Buffalo";
+  src: local("Buffalo"),
+  url("~@/fonts/Buffalo.otf") format('opentype');
+}
+
 
 /*----------------------------------------
 1. TIPOGRAFIA DEL SITIO
@@ -15,11 +22,24 @@ html {
   
 }
 
-p, h1, h2,  ul{
+
+
+
+p, h1,  ul{
   color: $primario;
   text-decoration: none;
   font-family: 'GFS Didot', serif;
 }
+
+
+h2{
+  color: $primario;
+  text-decoration: none;
+  font-family: 'Buffalo';
+}
+
+
+
 
 a, li{
   color: $secundario;
@@ -29,7 +49,7 @@ a, li{
 
 h3, h4{
   font-family: 'GFS Didot', serif;
-  color: $texto;
+  color: $secundario;
   text-decoration: none;
 }
 
@@ -38,3 +58,15 @@ h5, h6{
   color: $primario;
   text-decoration: none;
 }
+
+
+.tarjeta {
+  border-color: $primario;
+  border-radius: 1rem;
+  background-color: white;
+  box-shadow: 2px 2px 2px 2px rgba(87, 54, 85, 0.2);
+  
+  height: auto;
+}
+
+

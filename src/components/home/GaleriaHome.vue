@@ -2,7 +2,7 @@
   <div class="my-4">
     <b-row class="text-center">
       <b-col cols="12">
-        <h2 class="font-weight-bold py-5">GALERIA</h2>
+        <h2 class="font-weight-bold py-5">Galeria</h2>
       </b-col>
     </b-row>
     <b-row class="text-center">
@@ -16,7 +16,7 @@
               class="galeria"
             >
               <b-card-text>
-                <p class="h4">Gato</p>
+                <p class="h4">Orquídeas</p>
               </b-card-text>
             </b-card>
           </slide>
@@ -39,9 +39,10 @@
               img-src="https://floryfaunamonforte.com/wp-content/uploads/2016/04/Unknown-1.jpeg"
               img-alt="Galeria Peony"
               img-top
+              class="galeria"
             >
               <b-card-text>
-                <p class="h4">Gato</p>
+                <p class="h4">Clavéles</p>
               </b-card-text>
             </b-card>
           </slide>
@@ -51,6 +52,7 @@
               img-src="https://decoracionyjardines.com/wp-content/uploads/2016/05/Calendario-de-flores-de-temporada-1.jpg"
               img-alt="Galeria Peony"
               img-top
+              class="galeria"
             >
               <b-card-text>
                 <p class="h4">Gato</p>
@@ -63,6 +65,7 @@
               img-src="https://decoracionyjardines.com/wp-content/uploads/2016/05/Calendario-de-flores-de-temporada-2-300x188.jpg"
               img-alt="Galeria Peony"
               img-top
+              class="galeria"
             >
               <b-card-text>
                 <p class="h4">Gato</p>

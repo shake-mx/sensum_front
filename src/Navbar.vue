@@ -40,4 +40,8 @@ export default {
     backdrop-filter: blur(15px); 
 }
 
+h3{
+  color:$texto;
+}
+
 </style>

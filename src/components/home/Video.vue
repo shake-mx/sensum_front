@@ -1,10 +1,10 @@
 <template>
   <div>
-    <video class="videoPeony" type="video" autoplay loop muted>
+    <video class="videoPeony" type="video" autoplay loop muted playsinline>
       <source src="@/assets/peony.mp4" type="video/mp4" /> 
     </video>
    
-    <video class="videoPeony916" type="video" autoplay loop muted>
+    <video class="videoPeony916" type="video" autoplay loop muted  playsinline>
       <source src="@/assets/peony9x16.mp4" type="video/mp4" />
     </video>
   </div>
@@ -18,7 +18,8 @@ export default {
 
 <style scoped>
 .videoPeony {
-  width: 100%;
+  width: 100%    !important;
+  height: auto   !important;
 }
 
 @media only screen and (max-width: 767px) {
@@ -28,8 +29,8 @@ export default {
 }
 
 .videoPeony916 {
-  width: revert;
-  height: 100vh;
+   width: 100%    !important;
+  height: auto   !important;
 }
 
 @media only screen and (min-width: 768px) {

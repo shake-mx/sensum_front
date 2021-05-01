@@ -1,5 +1,5 @@
 <template>
-  <div class="my-0">
+  <div class="my-0 mx-0">
     <Video />
     <b-container fluid>
       <Nav />
