@@ -22,7 +22,7 @@
         </b-col>
         <b-col cols="12" >
           <h5 class="my-4  text-center  descripcion">
-            Descubre semana a semana más de las flores y plantas
+            Descubre semana a semana más de las amadas flores
           </h5>
         </b-col>
       </b-row>
