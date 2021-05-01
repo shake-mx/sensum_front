@@ -2,7 +2,8 @@
   <div class="my-4">
     <b-row class="text-center">
       <b-col cols="12">
-        <h2 class="font-weight-bold py-5">Galeria</h2>
+        <h1 class="py-5">Galería</h1>
+
       </b-col>
     </b-row>
     <b-row class="text-center">
@@ -106,7 +107,7 @@ export default {
 </script>
 
 
-<style scoped>
+<style lang="scss" scoped>
 .row {
   margin-top: 2rem;
 }

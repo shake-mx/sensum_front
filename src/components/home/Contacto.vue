@@ -2,9 +2,9 @@
   <b-container class="container p-md-5">
     <b-row class="justify-content-md-center tarjeta">
       <b-col cols="12" md="8" class=" px-md-5  ">
-        <h2 class="display-6 font-weight-bold py-5" align="center">
+        <h1 class="py-5" align="center">
           Envíanos un Mensaje
-        </h2>
+        </h1>
         <b-form class="forma">
           <b-row>
             <b-col cols="12" md="6">

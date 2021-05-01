@@ -1,8 +1,8 @@
 <template>
   <b-col cols="12" md="6">
-    <h2 class="font-weight-bold py-3 text-center titulo-valores">
+    <h1 class="py-5">
         Servicios
-        </h2>
+        </h1>
     <b-col cols="10" class="tarjeta my-4 mx-auto">
       <b-row>
         <b-col cols="12">
