@@ -10,69 +10,97 @@
       <b-col cols="12">
         <carousel :perPageCustom="[[0, 1], [768, 2], [1024,3]]">
           <slide class="p-2">
-            <b-card
-              img-src="https://lh3.googleusercontent.com/BJ_iC68Q3tTlMggzLiYdjovaGwbcowZqQspU-hJMg0eh0odzNEcXXrSkx-dxCqB-pSv2HZPUlcxmeJPC3OV0qN36=s825-c"
-              img-alt="Galeria Peony"
-              img-top
-              class="galeria"
-            >
+            <b-card img-top>
+            <template>
+              <img src="@/assets/galeria/Galeria_01.jpeg" alt="Galeria Peony"  class="galeria">
+            </template>
               <b-card-text>
-                <p class="h4">Orquídeas</p>
+                <p class="h4"></p>
               </b-card-text>
             </b-card>
           </slide>
-
           <slide class="p-2">
-            <b-card
-              img-src="https://decoracionyjardines.com/wp-content/uploads/2016/05/Calendario-de-flores-de-temporada-4.jpg"
-              img-alt="Galeria Peony"
-              img-top
-              class="galeria"
-            >
+            <b-card img-top>
+            <template>
+              <img src="@/assets/galeria/Galeria_02.jpeg" alt="Galeria Peony"  class="galeria">
+            </template>
               <b-card-text>
-                <p class="h4">Gato</p>
+                <p class="h4"></p>
               </b-card-text>
             </b-card>
           </slide>
+           <slide class="p-2">
+            <b-card img-top>
+            <template>
+              <img src="@/assets/galeria/Galeria_03.jpeg" alt="Galeria Peony"  class="galeria">
+            </template>
+              <b-card-text>
+                <p class="h4"></p>
+              </b-card-text>
+            </b-card>
+          </slide>
+           <slide class="p-2">
+            <b-card img-top>
+            <template>
+              <img src="@/assets/galeria/Galeria_04.jpeg" alt="Galeria Peony"  class="galeria">
+            </template>
+              <b-card-text>
+                <p class="h4"></p>
+              </b-card-text>
+            </b-card>
+          </slide>
+           <slide class="p-2">
+            <b-card img-top>
+            <template>
+              <img src="@/assets/galeria/Galeria_05.jpeg" alt="Galeria Peony"  class="galeria">
+            </template>
+              <b-card-text>
+                <p class="h4"></p>
+              </b-card-text>
+            </b-card>
+          </slide>
+           <slide class="p-2">
+            <b-card img-top>
+            <template>
+              <img src="@/assets/galeria/Galeria_06.jpeg" alt="Galeria Peony"  class="galeria">
+            </template>
+              <b-card-text>
+                <p class="h4"></p>
+              </b-card-text>
+            </b-card>
+          </slide>
+           <slide class="p-2">
+            <b-card img-top>
+            <template>
+              <img src="@/assets/galeria/Galeria_07.jpeg" alt="Galeria Peony"  class="galeria">
+            </template>
+              <b-card-text>
+                <p class="h4"></p>
+              </b-card-text>
+            </b-card>
+          </slide>
+           <slide class="p-2">
+            <b-card img-top>
+            <template>
+              <img src="@/assets/galeria/Galeria_08.jpeg" alt="Galeria Peony"  class="galeria">
+            </template>
+              <b-card-text>
+                <p class="h4"></p>
+              </b-card-text>
+            </b-card>
+          </slide>
+           <slide class="p-2">
+            <b-card img-top>
+            <template>
+              <img src="@/assets/galeria/Galeria_09.jpeg" alt="Galeria Peony"  class="galeria">
+            </template>
+              <b-card-text>
+                <p class="h4"></p>
+              </b-card-text>
+            </b-card>
+          </slide>
+          
 
-          <slide class="p-2">
-            <b-card
-              img-src="https://floryfaunamonforte.com/wp-content/uploads/2016/04/Unknown-1.jpeg"
-              img-alt="Galeria Peony"
-              img-top
-              class="galeria"
-            >
-              <b-card-text>
-                <p class="h4">Clavéles</p>
-              </b-card-text>
-            </b-card>
-          </slide>
-
-          <slide class="p-2">
-            <b-card
-              img-src="https://decoracionyjardines.com/wp-content/uploads/2016/05/Calendario-de-flores-de-temporada-1.jpg"
-              img-alt="Galeria Peony"
-              img-top
-              class="galeria"
-            >
-              <b-card-text>
-                <p class="h4">Gato</p>
-              </b-card-text>
-            </b-card>
-          </slide>
-
-          <slide class="p-2">
-            <b-card
-              img-src="https://decoracionyjardines.com/wp-content/uploads/2016/05/Calendario-de-flores-de-temporada-2-300x188.jpg"
-              img-alt="Galeria Peony"
-              img-top
-              class="galeria"
-            >
-              <b-card-text>
-                <p class="h4">Gato</p>
-              </b-card-text>
-            </b-card>
-          </slide>
         </carousel>
       </b-col>
     </b-row>

@@ -5,11 +5,6 @@
     </h1>
     <b-col cols="10" class="tarjeta my-4 mx-auto">
       <b-row>
-        <b-col cols="12">
-          <h4 class="font-weight-bold my-5 text-center subtitulo-valores descripcion">
-            "...el mundo esta hecho de flores..."
-          </h4>
-        </b-col>
         <b-col cols="9" class="mx-auto">
           <div>
             <img
@@ -20,10 +15,15 @@
             />
           </div>
         </b-col>
-        <b-col cols="12" >
-          <h5 class="my-4  text-center  descripcion">
-            Descubre semana a semana más de las amadas flores
+        <b-col cols="12">
+          <h5 class="my-3 text-center subtitulo-valores descripcion">
+            "...el mundo esta hecho de flores..."
           </h5>
+        </b-col>
+        <b-col cols="12" >
+          <h4 class="  text-center subtitulo-valores descripcion">
+            Semana a semana un descubrimiento floral
+          </h4>
         </b-col>
       </b-row>
     </b-col>
@@ -41,7 +41,7 @@ export default {
 <style lang="scss" scoped>
 
 .descripcion{
-  height: 3rem;
+  height: 2rem;
 }
 
 </style>

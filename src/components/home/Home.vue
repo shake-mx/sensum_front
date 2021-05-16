@@ -7,13 +7,14 @@
 
       <b-row class="justify-content-between">
         <Glosario />
-        <Servicios/>
+        <Servicios />
       </b-row>
       <b-row>
-      <b-col class="mx-0 px-0">
-        <Contacto/>
-      </b-col>
-    </b-row>
+        <b-col class="mx-0 px-0">
+          <Contacto />
+        </b-col>
+      </b-row>
+      <Footer />
     </b-container>
   </div>
 </template>
@@ -25,7 +26,7 @@ import GaleriaHome from "@/components/home/GaleriaHome";
 import Glosario from "@/components/home/Glosario";
 import Servicios from "@/components/home/Servicios";
 import Contacto from "@/components/home/Contacto";
-
+import Footer from "@/Footer";
 
 export default {
   name: "Home",
@@ -35,7 +36,8 @@ export default {
     GaleriaHome,
     Glosario,
     Servicios,
-    Contacto
+    Contacto,
+    Footer,
   },
 };
 </script>
