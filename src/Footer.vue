@@ -31,7 +31,7 @@
             <b-col cols="4">
                 <b-row>
                      <b-col cols="12">
-                        <a href="https://www.pinterest.com.mx/peonyfloristeria/_saved/" target="blank">
+                        <a href="https://pin.it/1jdnD6P" target="blank">
                         <font-awesome-icon :icon="['fab', 'pinterest-square']" size="4x"  /></a>
                     </b-col>
                     <b-col cols="12">
