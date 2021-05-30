@@ -3,9 +3,9 @@
     <h1 class="py-5">
         Servicios
         </h1>
-    <b-col cols="10" class="tarjeta my-4 mx-auto">
+    <b-col cols="12" class="tarjeta my-md-4 mx-auto">
       <b-row>
-        <b-col cols="9" class="mx-auto">
+        <b-col cols="12" class="mx-auto">
           <ServiciosCarrusel/>
   
         </b-col>
@@ -42,5 +42,12 @@ export default {
 .descripcion{
   height: 2rem;
 }
+
+@media only screen and (max-width: 576px) {
+  .descripcion{
+    height: 3rem;
+  }
+
+} 
 
 </style>

@@ -6,36 +6,48 @@
             </b-col>
         </b-row>
         <b-row class="text-center footer" >
-            <b-col cols="4">
+            <b-col cols="3">
                 <b-row>
                      <b-col cols="12">
                          <a href="https://www.facebook.com/PeonyFloristeria/" target="blank">
-                        <font-awesome-icon :icon="['fab', 'facebook-square']" size="4x"  /></a>    
+                        <font-awesome-icon :icon="['fab', 'facebook-square']" size="3x"  /></a>    
                     </b-col>
                     <b-col cols="12">
                         <h4 class="textoFooter">Facebook</h4>
                     </b-col>               
                 </b-row>
             </b-col>
-             <b-col cols="4">
+             <b-col cols="3">
                 <b-row>
                      <b-col cols="12">
                         <a href="https://www.instagram.com/peony_floristeria/" target="blank">
-                        <font-awesome-icon :icon="['fab', 'instagram-square']" size="4x"  /></a>       
+                        <font-awesome-icon :icon="['fab', 'instagram-square']" size="3x"  /></a>       
                     </b-col>
                     <b-col cols="12">
                         <h4 class="textoFooter">Instagram</h4>
                     </b-col>            
                 </b-row>
             </b-col>
-            <b-col cols="4">
+            <b-col cols="3">
                 <b-row>
                      <b-col cols="12">
                         <a href="https://pin.it/1jdnD6P" target="blank">
-                        <font-awesome-icon :icon="['fab', 'pinterest-square']" size="4x"  /></a>
+                        <font-awesome-icon :icon="['fab', 'pinterest-square']" size="3x"  /></a>
                     </b-col>
                     <b-col cols="12">
                         <h4 class="textoFooter">Pinterest</h4>
+                    </b-col>
+                    
+                </b-row>
+            </b-col>
+            <b-col cols="3">
+                <b-row>
+                     <b-col cols="12">
+                        <a href="https://vm.tiktok.com/ZMeGCjrYX/" target="blank">
+                        <font-awesome-icon :icon="['fab', 'tiktok']" size="3x"  /></a>
+                    </b-col>
+                    <b-col cols="12">
+                        <h4 class="textoFooter">TikTok</h4>
                     </b-col>
                     
                 </b-row>
@@ -69,6 +81,7 @@ a{
     color: $texto;
     text-decoration: none;
 }
+
 
 
 </style>

@@ -3,7 +3,9 @@
     <Video />
     <b-container fluid>
       <Nav />
+      
       <GaleriaHome />
+     
 
       <b-row class="justify-content-between">
         <Glosario />

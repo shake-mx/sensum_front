@@ -5,7 +5,7 @@
         <h1 class="py-5" align="center">
           Envíanos un Mensaje
         </h1>
-        <b-form class="forma">
+        <b-form class="forma" @submit="enviarCorreo">
           <b-row>
             <b-col cols="12" md="6">
               <b-form-group
@@ -63,12 +63,14 @@
                 id="input-group-4"
                 label="Asunto"
                 label-for="input-4"
+                
               >
                 <b-form-select
                   id="input-4"
                   v-model="form.asunto"
                   :options="asuntos"
                   required
+                  name="asunto"
                 ></b-form-select>
               </b-form-group>
             </b-col>
@@ -80,7 +82,7 @@
               v-model="form.eventoCheck"
               id="form.eventoCheck"
               :aria-describedby="ariaDescribedby"
-    
+              name="eventoCheck"
             >
               <br />
               <b-form-checkbox>Tengo una ocasión especial</b-form-checkbox>
@@ -95,7 +97,7 @@
                 <b-form-input
                   v-model="form.fecha_evento"
                   id="input-5"
-                  name="evento"
+                  name="fecha_evento"
                   placeholder="Fecha especial"
                   type="date"
                 >
@@ -115,6 +117,7 @@
                   id="input-6"
                   v-model="form.evento"
                   :options="eventos"
+                  name="evento"
                   
                 ></b-form-select>
               </b-form-group>
@@ -169,7 +172,7 @@
 
 
 <script>
-///import emailjs from "emailjs-com";
+import emailjs from "emailjs-com";
 export default {
   name: "Contacto",
   data() {
@@ -193,7 +196,7 @@ export default {
         "Colaboración",
         "Galería",
         "Jardín Secreto",
-        "Queja y/o Sugerencia",
+        "Comentarios",
         "Servicios",
         "Suscripción",
       ],
@@ -205,9 +208,9 @@ export default {
         "Aniversario",
         "Baby Shower",
         "Bautizo",
+        "Boda",
         "Cumpleaños",
         "Funeral",
-        "Por qué quiero y puedo",
       ],
     };
   },
@@ -229,6 +232,34 @@ export default {
       alert(
         "Haz enviado con exito el mensaje, pronto nos pondremos en contacto. Gracias"
       );
+      try {
+        emailjs.sendForm(
+          "service_itrpjtx",
+          "template_y32va2g",
+          e.target,
+          "user_ijpyXQhYqFvUoDbLv3rph",
+          {
+            name: this.form.name,
+            message: this.form.message,
+            mail: this.form.mail,
+            phone: this.form.phone,
+            asunto: this.form.asunto,
+            evento: this.form.evento,
+            fecha_evento: this.form.fecha_evento
+          }
+        );
+      } catch (error) {
+        console.log({ error });
+      }
+      this.form.name = "";
+      this.form.mail = "";
+      this.form.phone = "";
+      this.form.asunto = null;
+      this.form.message = "";
+      this.form.checked = false;
+      this.form.eventoCheck = false;
+      this.form.fecha_evento = "";
+      this.form.evento = null;
     },
   },
 };

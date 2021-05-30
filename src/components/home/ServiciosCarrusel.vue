@@ -1,27 +1,28 @@
 <template>
-  <div class="rounded">
+  <div >
     <b-carousel
       id="carousel-fade"
       fade
       indicators
-      :interval="2000"
+      :interval="4000"
       controls
+      no-hover-pause
       class="carrusel "
     >
       <b-carousel-slide>
         <template v-slot:img>
           <img 
-          class="d-block class-name"
+          class="img-fluid rounded"
           src="@/assets/servicios/Servicios_01.jpeg"
-          alt="">
+          alt="Regalos Personalizados">
         </template>
       </b-carousel-slide>
          <b-carousel-slide>
         <template v-slot:img>
           <img 
-          class="d-block class-name"
+          class="img-fluid rounded"
           src="@/assets/servicios/Servicios_02.jpeg"
-          alt="">
+          alt="Peonías">
         </template>
       </b-carousel-slide>
     </b-carousel>
@@ -37,20 +38,18 @@ export default {
 
 <style lang="scss" scoped>
 
-.carrusel{
-    width: 100%    !important;
-    height: auto   !important;   
+img{
+  height: 40rem !important;
+  width: 100% !important;
 }
 
+@media only screen and (max-width: 576px) {
+  img{
+  height: 25rem !important;
 
-.alto{
-  width: 100%    !important;
-  height: 27rem   !important;   
 }
 
-.class-name {
-   height:27rem;
- }
+} 
 
 
 </style>

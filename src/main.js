@@ -9,13 +9,14 @@ import VueRouter from 'vue-router';
 import VueCarousel from 'vue-carousel';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
-import { faFacebookSquare, faInstagramSquare, faPinterestSquare } from '@fortawesome/free-brands-svg-icons'
+import { faFacebookSquare, faInstagramSquare, faPinterestSquare, faTiktok } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 library.add(faUserSecret)
 library.add(faFacebookSquare)
 library.add(faInstagramSquare)
 library.add(faPinterestSquare)
+library.add(faTiktok)
 
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)

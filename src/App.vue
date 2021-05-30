@@ -9,6 +9,9 @@ import Home from './components/home/Home';
 
 export default {
   name: 'App',
+  created () {
+            document.title = "Peony Floristería";
+        },
   components: {
     Home
   }
@@ -34,8 +37,5 @@ export default {
   color: $secundario;
   
 }
-
-
-
 
 </style>

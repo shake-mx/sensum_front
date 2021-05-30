@@ -12,7 +12,7 @@
           <slide class="p-2">
             <b-card img-top>
             <template>
-              <img src="@/assets/galeria/Galeria_01.jpeg" alt="Galeria Peony"  class="galeria">
+              <img src="@/assets/galeria/Galeria_01.jpeg" alt="Galeria Peony"  class="img-fluid rounded">
             </template>
               <b-card-text>
                 <p class="h4"></p>
@@ -22,7 +22,7 @@
           <slide class="p-2">
             <b-card img-top>
             <template>
-              <img src="@/assets/galeria/Galeria_02.jpeg" alt="Galeria Peony"  class="galeria">
+              <img src="@/assets/galeria/Galeria_02.jpeg" alt="Galeria Peony"  class="img-fluid rounded">
             </template>
               <b-card-text>
                 <p class="h4"></p>
@@ -32,7 +32,7 @@
            <slide class="p-2">
             <b-card img-top>
             <template>
-              <img src="@/assets/galeria/Galeria_03.jpeg" alt="Galeria Peony"  class="galeria">
+              <img src="@/assets/galeria/Galeria_03.jpeg" alt="Galeria Peony"  class="img-fluid rounded">
             </template>
               <b-card-text>
                 <p class="h4"></p>
@@ -42,7 +42,7 @@
            <slide class="p-2">
             <b-card img-top>
             <template>
-              <img src="@/assets/galeria/Galeria_04.jpeg" alt="Galeria Peony"  class="galeria">
+              <img src="@/assets/galeria/Galeria_04.jpeg" alt="Galeria Peony" class="img-fluid rounded">
             </template>
               <b-card-text>
                 <p class="h4"></p>
@@ -52,7 +52,7 @@
            <slide class="p-2">
             <b-card img-top>
             <template>
-              <img src="@/assets/galeria/Galeria_05.jpeg" alt="Galeria Peony"  class="galeria">
+              <img src="@/assets/galeria/Galeria_05.jpeg" alt="Galeria Peony"  class="img-fluid rounded">
             </template>
               <b-card-text>
                 <p class="h4"></p>
@@ -62,7 +62,7 @@
            <slide class="p-2">
             <b-card img-top>
             <template>
-              <img src="@/assets/galeria/Galeria_06.jpeg" alt="Galeria Peony"  class="galeria">
+              <img src="@/assets/galeria/Galeria_06.jpeg" alt="Galeria Peony"  class="img-fluid rounded">
             </template>
               <b-card-text>
                 <p class="h4"></p>
@@ -72,7 +72,7 @@
            <slide class="p-2">
             <b-card img-top>
             <template>
-              <img src="@/assets/galeria/Galeria_07.jpeg" alt="Galeria Peony"  class="galeria">
+              <img src="@/assets/galeria/Galeria_07.jpeg" alt="Galeria Peony"  class="img-fluid rounded">
             </template>
               <b-card-text>
                 <p class="h4"></p>
@@ -82,7 +82,7 @@
            <slide class="p-2">
             <b-card img-top>
             <template>
-              <img src="@/assets/galeria/Galeria_08.jpeg" alt="Galeria Peony"  class="galeria">
+              <img src="@/assets/galeria/Galeria_08.jpeg" alt="Galeria Peony"  class="img-fluid rounded">
             </template>
               <b-card-text>
                 <p class="h4"></p>
@@ -92,7 +92,7 @@
            <slide class="p-2">
             <b-card img-top>
             <template>
-              <img src="@/assets/galeria/Galeria_09.jpeg" alt="Galeria Peony"  class="galeria">
+              <img src="@/assets/galeria/Galeria_09.jpeg" alt="Galeria Peony"  class="img-fluid rounded">
             </template>
               <b-card-text>
                 <p class="h4"></p>
@@ -140,8 +140,5 @@ export default {
   margin-top: 2rem;
 }
 
-.galeria, img{
-  min-height: 30rem;
-  height: 30rem;
-}
+
 </style>

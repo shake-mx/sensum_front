@@ -1,6 +1,6 @@
 <template>
-  <b-navbar type="dark" toggleable="xs" class="fondo fixed-top px-5">
-    <b-navbar-brand href="#">
+  <b-navbar type="dark" toggleable="xs" class="fondo fixed-top px-5" >
+    <b-navbar-brand href="https://peony.mx/">
       <img
         src="@/assets/logo.png"
         class="d-inline-block align-top navLogo"
@@ -11,13 +11,13 @@
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
     <b-collapse id="nav-collapse" is-nav>
-      <b-navbar-nav>
-        <b-nav-item href="#"><h3>Inicio</h3></b-nav-item>
+      <b-navbar-nav class="ml-auto">
+        <b-nav-item href="#" ><h3>Inicio</h3></b-nav-item>
         <b-nav-item href="#"><h3>Galería</h3> </b-nav-item>
         <b-nav-item href="#"><h3>Glosario</h3> </b-nav-item>
         <b-nav-item href="#"><h3>Servicios</h3> </b-nav-item>
         <b-nav-item href="#"><h3>Contacto</h3> </b-nav-item>
-        <b-nav-item href="#"><h3>Redes Sociales</h3></b-nav-item>
+        <b-nav-item href="#"><h3>Nuestro Día a Día</h3></b-nav-item>
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>
@@ -43,5 +43,7 @@ export default {
 h3{
   color:$texto;
 }
+
+
 
 </style>
