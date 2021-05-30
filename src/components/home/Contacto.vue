@@ -300,7 +300,7 @@ export default {
 .btn-primary:hover {
   color: $secundario;
   background-color: #fff !important;
-  border: none;
+  border-color: $primario;
 }
 
 .btn-primary:active {
