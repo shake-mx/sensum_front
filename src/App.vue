@@ -10,7 +10,7 @@ import Home from './components/home/Home';
 export default {
   name: 'App',
   created () {
-            document.title = "Peony Floristería";
+            document.title = "Sensum Soluciones Inmobiliarias";
         },
   components: {
     Home
