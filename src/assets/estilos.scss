@@ -2,14 +2,21 @@
 // PATRONES DE COLORES
 //---------------------------------------
 $primario: rgba(51, 51, 51);
-$secundario: rgb(102,102,102);
+// $secundario: rgb(255,222,89);
+$secundario: rgb(2,152,158);
 $texto: rgb(255,255,255);
-$gris: #CED4D9;
-
+$azul: rgb(82,190,255);
+$rojo: rgb(255,158,156);
+$verde: rgb(167,228,141);
+$amarillo: rgb(255,228,125);
+$rosa: rgb(255,187,185);
+$gris: rgb(84,84,84);
+$negro: rgb(0,0,0);
+$plata: rgb(247,248,249);
 @font-face {
-  font-family: "Buffalo";
-  src: local("Buffalo"),
-  url("~@/fonts/Buffalo.otf") format('opentype');
+  font-family: "Cerebri Sans Bold";
+  src: local("Cerebri Sans Bold"),
+  url("~@/fonts/Roboto-Regular.ttf") format('opentype');
 }
 
 
@@ -22,48 +29,155 @@ html {
   
 }
 
-
-
-
-p, h2,  ul{
-  color: $primario;
-  text-decoration: none;
-  font-family: 'GFS Didot', serif;
-}
-
-
-h1{
-  color: $primario;
-  text-decoration: none;
-  font-family: 'Buffalo';
-  font-size: 4rem !important;
-}
-
-
-
-
-a, li{
-  color: $secundario;
-  text-decoration: none;
-  font-family: 'GFS Didot', serif;
-}
-
-h3, h4{
-  font-family: 'GFS Didot', serif;
-  color: $secundario;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+label,
+a {
+  color: $texto !important;
   text-decoration: none;
 }
 
-h5, h6{
-  font-family: 'GFS Didot', serif;
-  color: $primario;
-  text-decoration: none;
+.color-primario{
+  color: $primario !important;
+}
+
+.color-secundario{
+  color: $secundario !important;
+}
+
+.color-azul{
+  color: $azul !important;
+}
+
+.color-rojo{
+  color: $rojo !important;
+}
+
+.color-verde{
+  color: $verde !important;
+}
+
+.color-amarillo{
+  color: $amarillo !important;
+}
+
+.color-rosa{
+  color: $rosa !important;
+}
+
+.color-gris{
+  color: $gris !important;
+}
+
+.color-plata{
+  color: $plata !important;
+}
+
+.bg-primario{
+  background-color: $primario !important;
+}
+
+.bg-secundario{
+  background-color: $secundario !important;
+}
+
+.bg-azul{
+  background-color: $azul !important;
+}
+
+.bg-rojo{
+  background-color: $rojo !important;
+}
+
+.bg-verde{
+  background-color: $verde !important;
+}
+
+.bg-amarillo{
+  background-color: $amarillo !important;
+}
+
+.bg-rosa{
+  background-color: $rosa !important;
+}
+
+.bg-gris{
+  background-color: $gris !important;
+}
+
+.bg-plata{
+  background-color: $plata !important;
+}
+
+.bg-hero{
+  background-color: rgba($color: $negro, $alpha: .6);
+  box-shadow: darken($color: $negro, $amount: 10%);
+}
+
+.bg-valores{
+  background-color: rgba($color: $secundario, $alpha: .6);
+  // box-shadow: 2px 1px 10px rgba($negro,.4);
+ 
 }
 
 
-.tarjeta {
-  background-color: white;
-  height: auto;
+.bg-filter {
+  backdrop-filter: saturate(200%) blur(20px);
+  background-color: rgba($color: $negro, $alpha: 0.90);
+  box-shadow: darken($color: $negro, $amount: 10%);
+  min-height: 75px;
+}
+
+.curva{
+  border-radius: 15px;
+}
+
+.vertical-center {
+  min-height: 100%; /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+  display: flex!important;
+  align-items: center!important;
+}
+
+.vertical-center-section {
+  min-height: 100%; /* Fallback for browsers do NOT support vh unit */
+  min-height: 50vh; /* These two lines are counted as one :-)       */
+  display: flex!important;
+  align-items: center!important;
+}
+
+
+.linea {
+  background-image: linear-gradient(to right, $secundario, $secundario);
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: 0% 0.1rem;
+  transition: background-size 1s ease;
+}
+
+
+.linea:hover {
+  background-image: linear-gradient(to right, $secundario, $secundario);
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: 40% 0.1rem;
+  transition: background-size 1s ease;
+}
+
+
+
+.subrayado {
+  background-image: linear-gradient(to right, $secundario, $secundario);
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: 80% 0.2rem;
+  transition: background-size 1s ease;
 }
 
 
@@ -76,26 +190,54 @@ h5, h6{
   color: $texto;
 }
 
-.shake{
-  color: #A680C8;
-  text-decoration: none;
+
+
+.navbar-dark .navbar-toggler-icon {
+  background-image: url("~@/assets/menu.png")!important;
+  border-color: transparent!important;
+  border: none!important;
+}
+
+.navbar-toggler:focus {
+  border-color: transparent!important;
+  border: none!important;
+  box-shadow: transparent!important;
 }
 
 
-.subtitulo-valores{
-  color: $secundario !important;
+.navbar-dark .navbar-toggler {
+  color: transparent!important;
+  border-color: transparent!important;
+  border: none!important;
 }
 
 
-.texto{
-  color:$texto !important;
-}
 
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 768px) {
   .textoFooter{
     display: none;
   }
 
+    .subrayado-derecha {
+      background-position: bottom center;
+     
+
+    }
+    
+    .subrayado-izquierda {
+      background-position: bottom center;
+   
+    }
+
+    h1.display-2{
+      font-size: 2.5rem;
+    }
+    
+    .display-4{
+      font-size: 2rem;
+    }
+    .display-5{
+      font-size: 1.5rem;
+    }
+
 } 
-
-
