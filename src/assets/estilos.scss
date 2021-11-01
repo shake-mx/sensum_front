@@ -180,6 +180,22 @@ a {
   transition: background-size 1s ease;
 }
 
+.subrayado-izquierda {
+  background-image: linear-gradient(to right, $secundario, $secundario);
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  background-size: 80% 0.2rem;
+  transition: background-size 1s ease;
+}
+
+.subrayado-derecha {
+  background-image: linear-gradient(to right, $secundario, $secundario);
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  background-size: 70% 0.2rem;
+  transition: background-size 1s ease;
+}
+
 
 .footer{
   background-color: $primario;
@@ -241,3 +257,42 @@ a {
     }
 
 } 
+
+
+ul {
+  list-style: none;
+}
+ul li.sensum::before {
+  content: "";
+  background-image: url("~@/assets/logo.png")!important;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  position: relative;
+  top: 0.1rem;
+  
+}
+
+li{
+  font-size: 16px!important;
+}
+
+
+.bg-servicios {
+  content: "";
+  background-image: url("~@/assets/servicios/09.png")!important;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  
+}
+
+.carousel-caption{
+  background-color: rgba($color: $negro, $alpha: .6);
+  box-shadow: darken($color: $negro, $amount: 10%);
+  border-radius: 15px;
+}
