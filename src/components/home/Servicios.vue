@@ -3,10 +3,10 @@
     <b-container class="my-5 py-5">
       <b-row class="text-center">
         <b-col cols="12">
-          <h1 class="display-2  color-secundario text-uppercase">
+          <h1 class="  color-secundario text-uppercase">
             <strong>Soluciones</strong>
           </h1>
-          <h2 class="display-5 color-gris">
+          <h2 class=" color-gris">
             <small
               >Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
@@ -14,7 +14,7 @@
               galley.</small
             >
           </h2>
-          <h2 class="display-4 color-secundario mt-4 ">Inmobiliarias</h2>
+          <h2 class=" color-secundario mt-4 ">Inmobiliarias</h2>
         </b-col>
         <b-col md="12">
           <b-row class="justify-content-between my-1" align-v="stretch">

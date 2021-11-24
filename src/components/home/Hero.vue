@@ -1,7 +1,7 @@
 <template>
   <b-container fluid class="bghero-parallax vertical-center">
       <b-row >
-        <b-col  cols="8" class="bg-hero pl-0 rounded-right rounded-lg">
+        <b-col  cols="8" class="bg-hero pl-0 curva-hero">
           <b-row class="justify-content-md-end justify-content-center">
             <b-col cols="6"  >
               <img
@@ -28,7 +28,7 @@ export default {
   height: 100vh;
   background: url("~@/assets/hero.png");
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: 75% 50%;
   background-size: cover;
   background-attachment: fixed;
 }

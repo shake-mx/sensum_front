@@ -4,6 +4,8 @@
       <Nav />
       <Hero />
       <br>
+      <br>
+      <br>
 
       <Somos/>
       <br>
