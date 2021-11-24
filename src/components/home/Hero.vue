@@ -27,9 +27,22 @@ export default {
 .bghero-parallax {
   height: 100vh;
   background: url("~@/assets/hero.png");
-  background-repeat: no-repeat;
-  background-position: 75% 50%;
-  background-size: cover;
+  background-repeat: repeat;
+  background-position: bottom;
+  background-size: initial;
   background-attachment: fixed;
 }
+
+
+
+@media only screen and (min-width: 576px) {
+.bghero-parallax {
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+} 
+
 </style>

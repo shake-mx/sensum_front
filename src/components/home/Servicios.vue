@@ -1,21 +1,7 @@
 <template>
   <b-container fluid class="bg-plata">
-    <b-container class="my-5 py-5">
+    <b-container class="py-5">
       <b-row class="text-center">
-        <b-col cols="12">
-          <h1 class="  color-secundario text-uppercase">
-            <strong>Soluciones</strong>
-          </h1>
-          <h2 class=" color-gris">
-            <small
-              >Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a
-              galley.</small
-            >
-          </h2>
-          <h2 class=" color-secundario mt-4 ">Inmobiliarias</h2>
-        </b-col>
         <b-col md="12">
           <b-row class="justify-content-between my-1" align-v="stretch">
             <b-col md="4" class="my-5">
@@ -284,4 +270,26 @@ export default {
 .titulo {
   min-height: 60px;
 }
+
+
+.bghero-parallax {
+  height: 100vh;
+  background: url("~@/assets/hero.png");
+  background-repeat: repeat;
+  background-position: center;
+  background-size: auto;
+  background-attachment: fixed;
+}
+
+
+
+@media only screen and (min-width: 576px) {
+.bghero-parallax {
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+} 
 </style>

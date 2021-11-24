@@ -9,6 +9,8 @@
 
       <Somos/>
       <br>
+      <Accion1/>
+      <TitularServicios/>
       <Servicios/>
  
   </div>
@@ -18,6 +20,8 @@
 import Nav from "../../Navbar";
 import Hero from "@/components/home/Hero";
 import Somos from "@/components/home/Somos";
+import Accion1 from "@/components/home/Accion1";
+import TitularServicios from "@/components/home/TitularServicios";
 import Servicios from "@/components/home/Servicios";
 
 export default {
@@ -26,6 +30,8 @@ export default {
     Nav,
     Hero,
     Somos,
+    Accion1,
+    TitularServicios,
     Servicios
   },
 };
