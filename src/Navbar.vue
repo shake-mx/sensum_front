@@ -11,14 +11,14 @@
     
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
     
-    <b-collapse id="nav-collapse" class="text-uppercase" is-nav>
+    <b-collapse id="nav-collapse" class="text-uppercase " is-nav>
       <b-navbar-nav>
-        <b-nav-item href="#" class="linea"><h3>Inicio</h3> </b-nav-item>
-        <b-nav-item href="#" class="linea"><h3>Quiénes Somos</h3> </b-nav-item>
-        <b-nav-item href="#" class="linea"><h3>Soluciones</h3> </b-nav-item>
-        <b-nav-item href="#" class="linea"><h3>Catálogo</h3> </b-nav-item>
-        <b-nav-item href="#" class="linea"><h3>Testimonios</h3> </b-nav-item>
-        <b-nav-item href="#" class="linea"><h3>Contactos</h3> </b-nav-item>
+        <b-nav-item href="#" class="linea "><h3 class="color-secundario">Inicio</h3> </b-nav-item>
+        <b-nav-item href="#" class="linea "><h3 class="color-secundario">Quiénes Somos</h3> </b-nav-item>
+        <b-nav-item href="#" class="linea "><h3 class="color-secundario">Soluciones</h3> </b-nav-item>
+        <b-nav-item href="#" class="linea "><h3 class="color-secundario">Catálogo</h3> </b-nav-item>
+        <b-nav-item href="#" class="linea "><h3 class="color-secundario">Testimonios</h3> </b-nav-item>
+        <b-nav-item href="#" class="linea "><h3 class="color-secundario">Contactos</h3> </b-nav-item>
       </b-navbar-nav>
     </b-collapse>
 
