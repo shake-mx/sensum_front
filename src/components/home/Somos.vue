@@ -23,12 +23,8 @@
         </h1>
       </b-col>
     </b-row>
-    <br>
-    <br>
-    <br>
-    <br>
     <b-row>
-      <b-col md="12 my-5" >
+      <b-col md="12 mb-5" >
         <b-row class="justify-content-around"  >
           <b-col md="5" class="bg-secundario p-5 mx-1 my-3 curva border" align-self="stretch">
             <h3 class="text-uppercase color-plata">
