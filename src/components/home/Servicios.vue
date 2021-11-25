@@ -193,69 +193,7 @@
         </b-col>
       </b-row>
 
-      <b-row class=" text-center  curva py-5">
-        <b-col cols="12">
-          <h2 class="display-4 color-secundario mt-4 ">Especializadas</h2>
-        </b-col>
-        <b-col  >
-          <b-carousel :interval="4000" controls indicators fade  no-hover-pause>
-            <b-carousel-slide caption="Avalúos para INFONAVIT y FOVISSSTE" >
-              <template v-slot:img>
-                <img
-                  src="@/assets/servicios/09.png"
-                  alt="Asesoría Inmobiliaria"
-                  class="img-fluid curva"
-                />
-              </template>
-            </b-carousel-slide>
-            <b-carousel-slide caption="Avalúos para Tesorería">
-              <template v-slot:img>
-                <img
-                  src="@/assets/servicios/10.png"
-                  alt="Asesoría Inmobiliaria"
-                  class="img-fluid curva"
-                />
-              </template>
-            </b-carousel-slide>
-            <b-carousel-slide caption="Elaboración de Programas de Obra">
-              <template v-slot:img>
-                <img
-                  src="@/assets/servicios/11.png"
-                  alt="Asesoría Inmobiliaria"
-                  class="img-fluid curva"
-                />
-              </template>
-            </b-carousel-slide>
-            <b-carousel-slide caption="Elaboración de Planos">
-              <template v-slot:img>
-                <img
-                  src="@/assets/servicios/12.png"
-                  alt="Asesoría Inmobiliaria"
-                  class="img-fluid curva"
-                />
-              </template>
-            </b-carousel-slide>
-            <b-carousel-slide caption="Gestoría para tramitación de certificados">
-              <template v-slot:img>
-                <img
-                  src="@/assets/servicios/13.png"
-                  alt="Asesoría Inmobiliaria"
-                  class="img-fluid curva"
-                />
-              </template>
-            </b-carousel-slide>
-            <b-carousel-slide caption="Inscripción de créditos INFONAVIT">
-              <template v-slot:img>
-                <img
-                  src="@/assets/servicios/14.png"
-                  alt="Asesoría Inmobiliaria"
-                  class="img-fluid curva"
-                />
-              </template>
-            </b-carousel-slide>
-          </b-carousel>
-        </b-col>
-      </b-row>
+      
     </b-container>
   </b-container>
 </template>
@@ -272,24 +210,5 @@ export default {
 }
 
 
-.bghero-parallax {
-  height: 100vh;
-  background: url("~@/assets/hero.png");
-  background-repeat: repeat;
-  background-position: center;
-  background-size: auto;
-  background-attachment: fixed;
-}
 
-
-
-@media only screen and (min-width: 576px) {
-.bghero-parallax {
-  height: 100vh;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-
-} 
 </style>

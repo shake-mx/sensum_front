@@ -26,23 +26,24 @@ export default {
 <style lang="scss" scoped>
 .bghero-parallax {
   height: 100vh;
-  background: url("~@/assets/hero.png");
-  background-repeat: repeat;
-  background-position: bottom;
-  background-size: initial;
+  background: url("~@/assets/heromd.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   background-attachment: fixed;
 }
 
 
 
-@media only screen and (min-width: 576px) {
+@media only screen and (max-width: 768px) {
 .bghero-parallax {
   height: 100vh;
+  background: url("~@/assets/herosm.png");
   background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
+  background-attachment: initial;
 }
-
-
 } 
 
 </style>

@@ -30,25 +30,38 @@ export default {
   min-height: 60px;
 }
 
-
 .bghero-parallax {
-  height: 100vh;
-  background: url("~@/assets/hero.png");
-  background-repeat: repeat;
-  background-position: bottom;
-  background-size: initial;
+  height: 50vh;
+  background: url("~@/assets/heromd.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   background-attachment: fixed;
 }
 
 
 
-@media only screen and (min-width: 576px) {
+@media only screen and (max-width: 768px) {
 .bghero-parallax {
   height: 50vh;
+  background: url("~@/assets/herosm.png");
   background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
+  background-attachment: initial;
 }
+} 
+
+@media only screen and (max-width: 576px) {
+.bghero-parallax {
+  height: 90vh;
+  background: url("~@/assets/herosm.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: initial;
 }
+} 
 
 .vertical-center-servicios {
   display: flex!important;

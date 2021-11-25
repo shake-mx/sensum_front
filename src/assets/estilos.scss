@@ -133,11 +133,72 @@ a {
 
 .bg-filter {
   backdrop-filter: saturate(200%) blur(20px);
-  background-color: rgba($color: $plata, $alpha: 0.90);
-  box-shadow: darken($color: $plata, $amount: 10%);
+  background-color: rgba($color: white, $alpha: 0.90);
+  box-shadow: darken($color: white, $amount: 10%);
   min-height: 75px;
 }
 
+.bg-dinamico {
+  -webkit-animation: colorchange 10s infinite alternate;
+  animation: colorchange 10s infinite alternate;
+}
+
+
+@-webkit-keyframes colorchange {
+  0% {
+    
+    background-color: $azul;
+  }
+  
+  25% {
+    
+    background-color: $rojo;
+  }
+  
+  50% {
+    
+    background-color: $verde;
+  }
+  
+  75% {
+    
+    background-color: $amarillo;
+  }
+  
+  100% {
+    
+    background-color: $rosa;
+  }
+
+}
+
+@keyframes colorchange {
+  0% {
+    
+    background-color: $azul;
+  }
+  
+  25% {
+    
+    background-color: $rojo;
+  }
+  
+  50% {
+    
+    background-color: $verde;
+  }
+  
+  75% {
+    
+    background-color: $amarillo;
+  }
+  
+  100% {
+    
+    background-color: $rosa;
+  }
+  
+}
 
 
 .curva{
@@ -281,18 +342,23 @@ li{
 }
 
 
-.bg-servicios {
-  content: "";
-  background-image: url("~@/assets/servicios/09.png")!important;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
 
-  
-}
 
 .carousel-caption{
   background-color: rgba($color: $negro, $alpha: .6);
   box-shadow: darken($color: $negro, $amount: 10%);
   border-radius: 15px;
+  h3{
+    font-size: 1.5rem;
+  }
 }
+
+
+@media only screen and (max-width: 768px) {
+  .carousel-caption{
+    h3{
+      font-size: 1rem;
+    }
+  }
+
+} 

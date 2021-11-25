@@ -12,7 +12,11 @@
       <Accion1/>
       <TitularServicios/>
       <Soluciones/>
-      <Servicios/>
+      <Legales/>
+      <Especializadas/>
+      <Accion2/>
+      <Testimoniales/>
+      <Footer/>
  
   </div>
 </template>
@@ -24,7 +28,11 @@ import Somos from "@/components/home/Somos";
 import Accion1 from "@/components/home/Accion1";
 import TitularServicios from "@/components/home/TitularServicios";
 import Soluciones from "@/components/home/Soluciones";
-import Servicios from "@/components/home/Servicios";
+import Legales from "@/components/home/Legales";
+import Especializadas from "@/components/home/Especializadas";
+import Accion2 from "@/components/home/Accion2";
+import Testimoniales from "@/components/home/Testimoniales";
+import Footer from "../../Footer";
 
 export default {
   name: "Home",
@@ -35,7 +43,11 @@ export default {
     Accion1,
     TitularServicios,
     Soluciones,
-    Servicios
+    Legales,
+    Especializadas,
+    Accion2,
+    Testimoniales,
+    Footer
   },
 };
 </script>

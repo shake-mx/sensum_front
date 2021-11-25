@@ -1,18 +1,18 @@
 <template>
-  <b-container fluid class="bg-secundario">
+  <b-container fluid class="bg-dinamico">
     <b-container class="py-5">
       <b-row class="text-left" align-v="center">
         <b-col cols="12" md="8">
-          <h3 class="color-plata">
+          <h3 class="color-gris">
             <strong
               >"El éxito de nuestras operaciones suma hoy $250,000,000 "</strong
             >
           </h3>
-          <h1 class="text-uppercase color-amarillo">
+          <h1 class="text-uppercase color-gris">
             Deja que te ayudemos a encontrar una solución ideal a tus problemas
             inmobiliarios
           </h1>
-          <h2 class="color-plata">
+          <h2 class="color-gris">
             Somos profesionales especializados en la comercialización de
             inmuebles <strong>Nuevos, en Preventa y Seminuevos</strong>. La
             confianza, transparencia y veracidad de nuestros servicios permiten
@@ -24,7 +24,7 @@
           <b-button
             target="_blank"
             block
-            class="bg-white curva color-secundario py-3"
+            class="bg-white curva color-gris py-3"
             size="lg"
             href="https://wa.me/5215566286715?text=Quiero%20ayuda%20inmobiliaria%20"
           >
