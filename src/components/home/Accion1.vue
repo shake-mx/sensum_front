@@ -5,19 +5,16 @@
         <b-col cols="12" md="8">
           <h3 class="color-gris">
             <strong
-              >"El éxito de nuestras operaciones suma hoy $250,000,000 "</strong
+              >"El éxito de nuestras operaciones suma hoy $250,000,000"</strong
             >
           </h3>
-          <h1 class="text-uppercase color-gris">
+          <h1 class=" color-gris">
             Deja que te ayudemos a encontrar una solución ideal a tus problemas
             inmobiliarios
           </h1>
           <h2 class="color-gris">
             Somos profesionales especializados en la comercialización de
-            inmuebles <strong>Nuevos, en Preventa y Seminuevos</strong>. La
-            confianza, transparencia y veracidad de nuestros servicios permiten
-            a nuestros clientes tener la tranquilidad de que su inmueble está en
-            las mejores manos
+            inmuebles <strong>Nuevos, en Preventa y Seminuevos</strong>.
           </h2>
         </b-col>
         <b-col cols="12" md="4" class="my-5">

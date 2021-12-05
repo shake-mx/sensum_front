@@ -3,7 +3,7 @@
     <b-container class="py-5">
       <b-row class="text-left" align-v="center">
         <b-col cols="10" lg="7" class="mx-auto order-lg-1">
-          <h1 class="text-uppercase color-gris">
+          <h1 class=" color-gris">
             ¡Te presentamos 5 factores que evitan la venta o renta de una propiedad!
           </h1>
           <ol class="mt-4 text-left px-0 px-md-3 ">
