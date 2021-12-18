@@ -13,16 +13,22 @@ $rosa: rgb(255,187,185);
 $gris: rgb(84,84,84);
 $negro: rgb(0,0,0);
 $plata: rgb(247,248,249);
+$whats: rgb(37,211,102);
+$face:rgb(59,89,152);
 @font-face {
-  font-family: "Cerebri Sans Bold";
-  src: local("Cerebri Sans Bold"),
-  url("~@/fonts/Roboto-Regular.ttf") format('opentype');
+  font-family: "Cerebri Sans Book";
+  src: local("Cerebri Sans Book"),
+  url("~@/fonts/Cerebri Sans Book.ttf") format('truetype');
 }
 
 
 /*----------------------------------------
 1. TIPOGRAFIA DEL SITIO
 -----------------------------------------*/
+
+body{
+  font-family: "Cerebri Sans Book", sans-serif;
+}
 
 html {
     font-size: 13px;
@@ -83,6 +89,14 @@ a {
   color: $plata !important;
 }
 
+.color-whats{
+  color: $whats !important;
+}
+
+.color-face{
+  color: $face !important;
+}
+
 .bg-primario{
   background-color: $primario !important;
 }
@@ -136,6 +150,20 @@ a {
   background-color: rgba($color: white, $alpha: 0.90);
   box-shadow: darken($color: white, $amount: 10%);
   min-height: 75px;
+}
+
+.bg-filter-flotante{
+  backdrop-filter: saturate(200%) blur(20px);
+  background-color: rgba($color: white, $alpha: 0.20);
+  box-shadow: darken($color: white, $amount: 10%);
+}
+
+.bg-whats{
+  background-color: $whats!important;
+}
+
+.bg-face{
+  background-color: $face!important;
 }
 
 .bg-dinamico {

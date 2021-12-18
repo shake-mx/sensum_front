@@ -8,7 +8,7 @@
           </h2>
        </b-col>
        
-       <b-col cols="10" lg="6" class="my-5 mx-auto">
+       <b-col cols="12" lg="6" class="my-5 mx-auto">
           <h3 class=" color-plata text-justify">
               Brindamos servicios jurídicos especializados en aspectos 
               patrimoniales relacionados con negocios inmobiliarios, 
@@ -26,7 +26,7 @@
                   <li class=" color-plata  sensum"> Procedimiento de mediación en Centros de Justicia Alternativa</li>
                 </ul>
         </b-col>
-        <b-col cols="10" lg="6" class="my-5 mx-auto" align-self="end">
+        <b-col cols="10" lg="4" class="my-5 mx-auto" align-self="center">
           <img
                 src="@/assets/servicios/sl.png"
                 alt="Soluciones Legales"

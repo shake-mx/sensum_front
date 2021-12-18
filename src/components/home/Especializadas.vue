@@ -7,7 +7,7 @@
             <strong>Soluciones Especializadas</strong>
           </h2>
        </b-col>
-       <b-col cols="10" class="my-5 mx-auto">
+       <b-col cols="12" class="my-5 mx-auto">
           <h3 class=" color-secundario text-justify">
               El equipo de profesionales de Sensum está calificado para brindar 
               servicios especializados con altos estándares de calidad, 

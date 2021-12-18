@@ -1,15 +1,15 @@
 <template>
   <b-container>
-    <b-row class="text-md-right my-5">
+    <b-row class="text-md-right my-5 mx-2 ">
       <b-col
-        cols="10"
+        cols="12"
         md="8"
-        class="bg-secundario curva offset-1 offset-md-4 px-5 py-3"
+        class="bg-secundario curva offset-md-4 px-5 py-3"
       >
         <h1 class=" color-plata text-uppercase">
-          <strong>¿Quienes somos?</strong>
+          <strong>¿Quiénes somos?</strong>
         </h1>
-        <h2 class=" color-plata">
+        <h2 class="text-justify text-md-right color-plata">
           Somos un equipo de profesionales inmobiliarios comprometidos con
           proteger, guiar y conectar los intereses de nuestros clientes,
           aportando soluciones con alto nivel de eficiencia y conforme a valores
@@ -18,7 +18,7 @@
       </b-col>
     </b-row>
     <b-row>
-      <b-col cols="10" md="12" class="offset-1 offset-md-0 mb-5 py-3">
+      <b-col cols="12" md="12" class="offset-md-0 mb-5 py-3 mx-2">
             <b-row class="justify-content-between my-1">
               <b-col md="5" class="my-5 " align-self="stretch">
                 <h3

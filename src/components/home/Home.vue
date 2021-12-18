@@ -2,6 +2,7 @@
   <div class="p-0 m-0">
    
       <Nav />
+      <Flotantes/>
       <Hero />
       <br>
       <br>
@@ -23,6 +24,7 @@
 
 <script>
 import Nav from "../../Navbar";
+import Flotantes from "../../Flotantes";
 import Hero from "@/components/home/Hero";
 import Somos from "@/components/home/Somos";
 import Accion1 from "@/components/home/Accion1";
@@ -38,6 +40,7 @@ export default {
   name: "Home",
   components: {
     Nav,
+    Flotantes,
     Hero,
     Somos,
     Accion1,

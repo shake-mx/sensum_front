@@ -8,8 +8,8 @@ import VueAxios from 'vue-axios';
 import VueRouter from 'vue-router';
 import VueCarousel from 'vue-carousel';
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faEnvelope, faMapMarkerAlt, faPhoneAlt, faUserSecret } from '@fortawesome/free-solid-svg-icons'
-import { faFacebookSquare, faInstagramSquare, faPinterestSquare, faTiktok } from '@fortawesome/free-brands-svg-icons'
+import { faEnvelope, faHome, faMapMarkerAlt, faPhoneAlt, faUserSecret } from '@fortawesome/free-solid-svg-icons'
+import { faFacebook, faFacebookF, faFacebookSquare, faInstagramSquare, faPinterestSquare, faTiktok,  faWhatsapp,  faYoutubeSquare } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 library.add(faUserSecret)
@@ -20,6 +20,13 @@ library.add(faTiktok)
 library.add(faEnvelope)
 library.add(faPhoneAlt)
 library.add(faMapMarkerAlt)
+library.add(faFacebookSquare)
+library.add(faFacebook)
+library.add(faFacebookF)
+library.add(faYoutubeSquare)
+library.add(faWhatsapp)
+library.add(faHome)
+
 
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
