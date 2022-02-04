@@ -1,5 +1,5 @@
 <template>
-  <b-container fluid class="bg-secundario vertical-center-servicios">
+  <b-container fluid class="bg-secundario vertical-center-servicios" data-aos="fade-up" data-aos-duration="3000">
     <b-container class="py-5">
       <b-row class="text-center"  >
         <b-col cols="10" class="py-3 mx-auto">

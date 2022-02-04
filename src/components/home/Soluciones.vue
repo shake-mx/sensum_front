@@ -1,5 +1,5 @@
 <template>
-  <b-container fluid class="bghero-parallax vertical-center-servicios">
+  <b-container fluid class="bghero-parallax vertical-center-servicios" data-aos="fade-up" data-aos-duration="3000">
     <b-container class="py-5">
       <b-row class="text-center bg-hero curva" >
         <b-col cols="12" class="py-3">

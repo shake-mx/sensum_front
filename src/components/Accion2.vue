@@ -19,7 +19,7 @@
             block
             class="bg-white curva color-gris py-3 w-75 mx-auto"
             size="lg"
-            href="https://wa.me/5215566286715?text=Quiero%20ayuda%20inmobiliaria%20"
+            href="https://wa.me/5215630296930?text=Quiero%20ayuda%20inmobiliaria%20"
           >
             <b-icon icon="arrow-right"></b-icon>
             <span> Vende o Renta Ahora tu Propiedad</span></b-button

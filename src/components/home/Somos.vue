@@ -1,5 +1,5 @@
 <template>
-  <b-container>
+  <b-container id="quienessomos" class="pt-5" data-aos="fade-up" data-aos-duration="3000">
     <b-row class="text-md-right my-5 mx-2 ">
       <b-col
         cols="12"
@@ -70,7 +70,7 @@
     <hr class="bg-secundario w-75 " />
     <br />
     <br />
-    <b-row class="text-center my-5">
+    <b-row class="text-center my-5" data-aos="fade-up" data-aos-duration="3000">
       <b-col class="curva  px-5 py-3">
         <h1 class=" color-secundario text-uppercase">
           <strong>Acerca de Nosotros</strong>
@@ -79,7 +79,7 @@
     </b-row>
     <b-row>
       <b-col md="12" class="mb-5">
-        <b-row class="justify-content-around">
+        <b-row class="justify-content-around" data-aos="fade-up" data-aos-duration="3000">
           <b-col
           cols="11"
             md="5"

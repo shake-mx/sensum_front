@@ -6,7 +6,6 @@
       <Hero />
       <br>
       <br>
-      <br>
 
       <Somos/>
       <br>
@@ -23,18 +22,18 @@
 </template>
 
 <script>
-import Nav from "../../Navbar";
-import Flotantes from "../../Flotantes";
+import Nav from "@/components/Navbar";
+import Flotantes from "@/components/Flotantes";
 import Hero from "@/components/home/Hero";
 import Somos from "@/components/home/Somos";
-import Accion1 from "@/components/home/Accion1";
+import Accion1 from "@/components/Accion1";
 import TitularServicios from "@/components/home/TitularServicios";
 import Soluciones from "@/components/home/Soluciones";
 import Legales from "@/components/home/Legales";
 import Especializadas from "@/components/home/Especializadas";
-import Accion2 from "@/components/home/Accion2";
+import Accion2 from "@/components/Accion2";
 import Testimoniales from "@/components/home/Testimoniales";
-import Footer from "../../Footer";
+import Footer from "@/components/Footer";
 
 export default {
   name: "Home",
@@ -52,6 +51,7 @@ export default {
     Testimoniales,
     Footer
   },
+
 };
 </script>
 

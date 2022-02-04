@@ -15,6 +15,7 @@ $negro: rgb(0,0,0);
 $plata: rgb(247,248,249);
 $whats: rgb(37,211,102);
 $face:rgb(59,89,152);
+$fondo: #fefffe;
 @font-face {
   font-family: "Cerebri Sans Book";
   src: local("Cerebri Sans Book"),
@@ -32,6 +33,7 @@ body{
 
 html {
     font-size: 13px;
+    height: 100%;
   
 }
 
@@ -133,6 +135,11 @@ a {
   background-color: $plata !important;
 }
 
+
+.bg-fondo{
+  background-color: $fondo !important;
+}
+
 .bg-hero{
   background-color: rgba($color: $plata, $alpha: .6);
   box-shadow: darken($color: $plata, $amount: 10%);
@@ -158,13 +165,6 @@ a {
   box-shadow: darken($color: white, $amount: 10%);
 }
 
-.bg-whats{
-  background-color: $whats!important;
-}
-
-.bg-face{
-  background-color: $face!important;
-}
 
 .bg-dinamico {
   -webkit-animation: colorchange 10s infinite alternate;

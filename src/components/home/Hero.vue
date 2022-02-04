@@ -1,5 +1,5 @@
 <template>
-  <b-container fluid class="bghero-parallax vertical-center">
+  <b-container fluid class="bghero-parallax vertical-center" id="inicio">
       <b-row >
         <b-col  cols="8" class="bg-hero pl-0 curva-hero">
           <b-row class="justify-content-md-end justify-content-center">
@@ -35,7 +35,7 @@ export default {
 
 
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 992px) {
 .bghero-parallax {
   height: 100vh;
   background: url("~@/assets/herosm.png");
