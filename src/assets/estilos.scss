@@ -172,6 +172,7 @@ a {
 }
 
 
+
 @-webkit-keyframes colorchange {
   0% {
     
@@ -390,3 +391,8 @@ li{
   }
 
 } 
+
+
+.legible {
+  text-shadow: 0 1px 2px rgba($color: black, $alpha: 0.1);
+}

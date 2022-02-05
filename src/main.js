@@ -10,7 +10,7 @@ import VueAxios from 'vue-axios';
 import VueCarousel from 'vue-carousel';
 import VueScrollTo from 'vue-scrollto';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faEnvelope, faHome, faMapMarkerAlt, faPhoneAlt, faUserSecret } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faHome, faMapMarkerAlt, faPhoneAlt, faUserSecret, faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook, faFacebookF, faFacebookSquare, faInstagramSquare, faPinterestSquare, faTiktok,  faWhatsapp,  faYoutubeSquare } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import VueRouter from 'vue-router';
@@ -32,6 +32,7 @@ library.add(faFacebookF)
 library.add(faYoutubeSquare)
 library.add(faWhatsapp)
 library.add(faHome)
+library.add(faMapMarkedAlt)
 
 
 

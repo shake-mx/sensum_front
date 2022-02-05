@@ -35,7 +35,7 @@ export default {
 .flotante{
   position: fixed;
   right: 0;
-  top: 50%;
+  top: 80%;
   z-index: 9999;
   transform: translate(0px, -50%);
   text-align: center;
