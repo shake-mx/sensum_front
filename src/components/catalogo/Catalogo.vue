@@ -9,8 +9,12 @@
       <Relevantes/>
       <br>
       <br>
-      
       <Accion2/>
+      <br>
+      <br>
+      <Propiedades/>
+      
+      
       <Testimoniales/>
       <Footer/>
  
@@ -23,6 +27,7 @@ import Flotantes from "@/components/Flotantes";
 import HeroCatalogo from "@/components/catalogo/HeroCatalogo";
 import Relevantes from "@/components/catalogo/Relevantes";
 import Accion2 from "@/components/Accion2";
+import Propiedades from "@/components/catalogo/Propiedades";
 import Testimoniales from "@/components/home/Testimoniales";
 import Footer from "@/components/Footer";
 
@@ -34,6 +39,7 @@ export default {
     HeroCatalogo,
     Relevantes,
     Accion2,
+    Propiedades,
     Testimoniales,
     Footer
   },

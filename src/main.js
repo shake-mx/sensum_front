@@ -10,29 +10,16 @@ import VueAxios from 'vue-axios';
 import VueCarousel from 'vue-carousel';
 import VueScrollTo from 'vue-scrollto';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faEnvelope, faHome, faMapMarkerAlt, faPhoneAlt, faUserSecret, faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons';
-import { faFacebook, faFacebookF, faFacebookSquare, faInstagramSquare, faPinterestSquare, faTiktok,  faWhatsapp,  faYoutubeSquare } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope, faHome, faMapMarkerAlt, faPhoneAlt, faUserSecret, faMapMarkedAlt, faBed, faCubes, faBath, faCar, faPaw, faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons';
+import { faFacebook, faFacebookF, faFacebookSquare, faInstagramSquare, faPagelines, faPinterestSquare, faTiktok,  faWhatsapp,  faYoutubeSquare } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import VueRouter from 'vue-router';
 import router from "./router";
 import VueMoment from 'vue-moment'
 import moment from 'moment-timezone'
 
-library.add(faUserSecret)
-library.add(faFacebookSquare)
-library.add(faInstagramSquare)
-library.add(faPinterestSquare)
-library.add(faTiktok)
-library.add(faEnvelope)
-library.add(faPhoneAlt)
-library.add(faMapMarkerAlt)
-library.add(faFacebookSquare)
-library.add(faFacebook)
-library.add(faFacebookF)
-library.add(faYoutubeSquare)
-library.add(faWhatsapp)
-library.add(faHome)
-library.add(faMapMarkedAlt)
+library.add(faEnvelope, faHome, faMapMarkerAlt, faPhoneAlt, faUserSecret, faMapMarkedAlt, faBed, faFacebook, faFacebookF, faFacebookSquare, faInstagramSquare, faPinterestSquare, faTiktok,  faWhatsapp,  faYoutubeSquare,faCubes,faBath,faCar,faPagelines,faPaw,faQuoteLeft,faQuoteRight);
+
 
 
 

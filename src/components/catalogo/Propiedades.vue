@@ -3,41 +3,33 @@
     <b-row class="text-center my-5" data-aos="fade-up" data-aos-duration="3000">
       <b-col class="curva  px-5 py-3">
         <h1 class=" color-secundario text-uppercase">
-          <strong>Relevantes</strong>
+          <strong>Propiedades</strong>
         </h1>
       </b-col>
     </b-row>
-    <b-row >
-      <b-col cols="12" class="mx-auto">
-        <carousel
-          data-aos="fade-up" 
-          data-aos-duration="3000"
-          :paginationEnabled="false"
-          :perPageCustom="[[0, 1], [576, 2], [1024,3]]"
-          autoplay
-          loop
-          :autoplayHoverPause="false"
-          :autoplayTimeout="5000"
-          easing="ease-in"
-          id="inicioCatalogo"
-          class="color-secundario"
-        >
-          <slide refs="slide" class="my-5 mx-3" v-for="relevante in relevantes"
-        :key="relevante.id">
-                   <b-card
+    <b-row>
+      <b-col
+        cols="12"
+        md="6"
+        lg="4"
+        class="mx-auto"
+        v-for="propiedad in propiedades"
+        :key="propiedad.id"
+      >
+        <b-card
           data-aos="fade-up"
           data-aos-duration="3000"
-          :img-src="relevante.imagenes[0].imagen"
-          :img-alt="relevante.nombre_propiedad"
+          :img-src="propiedad.imagenes[0].imagen"
+          :img-alt="propiedad.nombre_propiedad"
           img-top
-          :title="relevante.nombre_propiedad"
-          :sub-title="relevante.direccion"
+          :title="propiedad.nombre_propiedad"
+          :sub-title="propiedad.direccion"
           class="destacado curva sombra my-3"
           footer-tag="footer"
         >
           <b-card-body class="p-0">
             <b-card-text class="precio">
-              $ {{ relevante.precio.toLocaleString("es-MX") }} MXN
+              $ {{ propiedad.precio.toLocaleString("es-MX") }} MXN
             </b-card-text>
           </b-card-body>
           <b-card-body>
@@ -47,7 +39,7 @@
                   icon="quote-left"
                   size="md"
                   class="color-secundario legible sombra mr-1"
-                />{{ relevante.subtitulo }}
+                />{{ propiedad.subtitulo }}
                 <font-awesome-icon
                   icon="quote-right"
                   size="md"
@@ -67,7 +59,7 @@
                       class="color-secundario legible sombra"
                     />
                     <span class="mx-0" style="">
-                      {{ relevante.construccion_metros.toLocaleString() }} m²
+                      {{ propiedad.construccion_metros.toLocaleString() }} m²
                     </span>
                   </p>
                 </b-col>
@@ -79,8 +71,8 @@
                       class="color-secundario legible sombra"
                     /><span class="mx-1">
                       {{
-                        relevante.recamaras_con_closet +
-                          relevante.recamaras_sin_closet
+                        propiedad.recamaras_con_closet +
+                          propiedad.recamaras_sin_closet
                       }}</span
                     >
                   </p>
@@ -93,7 +85,7 @@
                       class="color-secundario legible sombra"
                     />
                     <span class="mx-1">
-                      {{ relevante.bano_completo + relevante.medio_bano / 2 }}
+                      {{ propiedad.bano_completo + propiedad.medio_bano / 2 }}
                     </span>
                   </p>
                 </b-col>
@@ -116,18 +108,18 @@
               <b-row>
                 <b-col cols="7" class="pt-1  my-auto">
                   <h5 class="color-texto ml-1 ">
-                    {{ relevante.agente.nombre }}
+                    {{ propiedad.agente.nombre }}
                   </h5>
                   <!-- <h6 class="color-texto ml-1">{{propiedad.agente.correo}}</h6>
                   <h6 class="color-texto ml-1">{{propiedad.agente.telefono}}</h6> -->
                 </b-col>
                 <b-col cols="5" class="p-0 m-0" align="center">
-                  <b-avatar :src="relevante.agente.foto" size="5rem"></b-avatar>
+                  <b-avatar :src="propiedad.agente.foto" size="5rem"></b-avatar>
                 </b-col>
                 <b-col cols="12" class="py-2">
                   <b-button
                     :href="
-                      `https://wa.me/521${relevante.agente.telefono}?text=Información%20de%20la%20propiedad%20${relevante.nombre_sensum}`
+                      `https://wa.me/521${propiedad.agente.telefono}?text=Información%20de%20la%20propiedad%20${propiedad.nombre_sensum}`
                     "
                     target="blank"
                     class="filtro-informes w-100 "
@@ -138,8 +130,6 @@
             </b-container>
           </template>
         </b-card>
-          </slide>
-        </carousel>
       </b-col>
     </b-row>
   </b-container>
@@ -148,21 +138,22 @@
 <script>
 import sensumService from "@/services/sensumService.js";
 export default {
-  name: "Relevantes",
-   data() {
+  name: "Propiedades",
+  data() {
     return {
-      relevantes: [],
+      propiedades: [],
     };
   },
   mounted() {
     sensumService
       .getPropiedades()
-      .then((relevantes) => (this.relevantes = relevantes.data));
+      .then((propiedades) => (this.propiedades = propiedades.data));
   },
 };
 </script>
 
 <style lang="scss" scoped>
+
 .card-title {
   color: $secundario !important;
   font-weight: 600;
@@ -243,7 +234,4 @@ p {
   transform: translateY(-2px);
   border-color: $fondo !important;
 }
-
-
-
 </style>
