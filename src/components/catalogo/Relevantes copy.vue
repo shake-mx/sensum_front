@@ -36,6 +36,27 @@
               v-for="relevante in relevantes"
               :key="relevante.id"
             >
+            <template v-if="relevante.amenidades.length >0">
+              <b-container fluid class="p-0 m-0">
+                <b-row class="justify-content-center">
+                  <b-col cols="12" class="text-center">
+                    <h1 class="color-secundario">
+                      <strong>
+                        <font-awesome-icon
+                          icon="exclamation-circle"
+                          size="3x"
+                          class="color-secundario legible sombra"
+                        />
+                      </strong>
+                    </h1>
+                    <h4 class="color-secundario">
+                      No hay información disponible
+                    </h4>
+                  </b-col>
+                </b-row>
+              </b-container>
+            </template>
+            <template v-else>
               <b-card
                 data-aos="fade-up"
                 data-aos-duration="3000"
@@ -187,6 +208,7 @@
                   </b-container>
                 </template>
               </b-card>
+              </template>
             </slide>
           </carousel>
         </template>
@@ -202,15 +224,13 @@ export default {
   data() {
     return {
       relevantes: [],
+      oferta: "oferta",
     };
   },
- mounted() {
+  mounted() {
     sensumService
       .getPropiedades()
-      .then(response => {this.relevantes = response.data.filter((amenidad)=>{return amenidad.amenidades.length >0});
-      });
-    
-     
+      .then((relevantes) => (this.relevantes = relevantes.data));
   },
 };
 </script>

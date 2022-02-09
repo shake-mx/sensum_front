@@ -23,9 +23,13 @@
         <b-container fluid class="p-0 m-0 recamara"> </b-container>
       </slide>
     </carousel>
-    <b-container class="postit legible" data-aos="fade-up" data-aos-duration="3000">
+    <b-container
+      class="postit legible"
+      data-aos="fade-up"
+      data-aos-duration="3000"
+    >
       <b-row>
-        <b-col cols="8" offset="2" class="subrayado py-1">
+        <b-col cols="8" offset="2" class=" py-1">
           <h4 class="color-secundario">
             Soluciones Inmobiliarias con Sentido Humano
           </h4>
@@ -39,57 +43,94 @@
           />
         </b-col>
       </b-row>
-      <b-row class="justify-content-between">
-        <b-col cols="6" class="my-3 ">
-          <b-button class="filtro-boton">Venta</b-button>
+
+      <b-row class="justify-content-center  mx-auto">
+        <b-col cols="6" class="my-3">
+          <b-button
+            class="filtro-boton"
+            @click="filtroVenta"
+            :pressed.sync="setVenta"
+            >Venta</b-button
+          >
         </b-col>
-        <b-col cols="6" class="my-3 ">
-          <b-button class="filtro-boton">Renta</b-button>
+        <b-col cols="6" class="my-3">
+          <b-button
+            class="filtro-boton"
+            @click="filtroRenta"
+            :pressed.sync="setRenta"
+            >Renta</b-button
+          >
         </b-col>
       </b-row>
-      <b-row>
-        <b-col cols="12" class="mx-auto">
-          <b-dropdown
-            text="Tipo de Propiedad"
-            block
-            variant="primary"
-            class="my-2"
-            menu-class="w-75"
-          >
-            <b-dropdown-item href="#">Casa</b-dropdown-item>
-            <b-dropdown-item href="#">Departamento</b-dropdown-item>
-            <b-dropdown-item href="#">Oficina</b-dropdown-item>
-            <b-dropdown-item href="#">Terreno</b-dropdown-item>
-            <b-dropdown-item href="#">Renta</b-dropdown-item>
-          </b-dropdown>
-        </b-col>
-        <b-col cols="12" class="my-3">
-          <label for="range-2"
-            ><h4 class="rango">Rango de Precio ${{ value }}</h4></label
-          >
-          <br />
-          <b-form-input
-            class="w-75 filtro-select"
-            id="range-2"
-            v-model="value"
-            type="range"
-            min="0"
-            max="20"
-            step="0.5"
-          ></b-form-input>
+
+      <b-row class="mx-auto">
+        <b-col cols="12" class="my-auto ">
+          <DoubleRangeSlider
+            class="w-75 mx-auto"
+            v-if="renderComponent"
+            :min="min"
+            :max="max"
+            @update:min="(value) => (min = value)"
+            @update:max="(value) => (max = value)"
+          ></DoubleRangeSlider>
+
           <b-row>
             <b-col cols="4" class="text-center"
-              ><h6 class="rango d-inline">$0.00</h6></b-col
+              ><h6 class="rangos d-inline">$0.00</h6></b-col
             >
             <b-col offset="4" cols="4" class="text-center"
-              ><h6 class="rango d-inline">$20,000,000</h6></b-col
+              ><h6 class="rangos d-inline">$20,000,000</h6></b-col
             >
           </b-row>
         </b-col>
 
-        <b-col cols="12">
-          <b-button class="filtro-buscar w-75"
+        <b-col cols="12" class="mx-auto mt-1 ">
+          <b-form-group block variant="primary" class="my-2">
+            <b-form-select
+              :options="tipoPropiedad"
+              v-model="propiedadCatalogo"
+            ></b-form-select>
+          </b-form-group>
+        </b-col>
+
+        <b-col cols="12" class="mt-5">
+          <h4 class="rango mx-auto">
+            <strong> Rango de Precio</strong> entre
+            <strong
+              >${{
+                min.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+              }}</strong
+            >
+            y
+            <strong
+              >${{
+                max.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+              }}</strong
+            >
+          </h4>
+        </b-col>
+      </b-row>
+      <b-row class="w-75 mx-auto mt-0">
+        <b-col cols="6" class="mt-1 mx-auto  px-2">
+          <h4 class="valores mx-auto">
+            <strong>{{ buscarAnuncio }}</strong>
+          </h4>
+        </b-col>
+        <b-col cols="6" class="mt-1 mx-auto px-2">
+          <h4 class="valores mx-auto">
+            <strong>{{ propiedadCatalogo }}</strong>
+          </h4>
+        </b-col>
+      </b-row>
+      <b-row>
+        <b-col cols="12" class="mt-3">
+          <b-button class="filtro-buscar w-75" @click="filtroGlobal"
             ><strong>Buscar</strong></b-button
+          >
+        </b-col>
+        <b-col cols="12" class="my-2">
+          <b-button class="filtro-reset w-75" @click="sinGlobal"
+            ><strong>Todas</strong></b-button
           >
         </b-col>
       </b-row>
@@ -113,12 +154,84 @@
 </template>
 
 <script>
+import DoubleRangeSlider from "@/components/catalogo/Slider";
 export default {
   name: "HeroCatalogo",
   data() {
     return {
-      value: "10",
+      buscarRenta: "",
+      buscarVenta: "",
+      buscarAnuncio: "Tipo Anuncio",
+      setRenta: false,
+      setVenta: false,
+      sinFiltro: false,
+      tipoPropiedad: [
+        { text: "Tipo de Propiedad", value:"Tipo Propiedad" },
+        { text: "Casa", value: "Casa" },
+        { text: "Departamento", value: "Departamento" },
+        { text: "Oficina", value: "Oficina" },
+        { text: "Remate", value: "Remate" },
+        { text: "Terreno", value: "Terreno" },
+      ],
+      propiedadCatalogo: "Tipo Propiedad",
+      min: 5000000,
+      max: 15000000,
+      renderComponent: true,
     };
+  },
+  components: {
+    DoubleRangeSlider,
+  },
+  props: {},
+  methods: {
+    filtroRenta() {
+      this.buscarAnuncio = "Renta";
+      this.buscarRenta = "Renta";
+      this.setVenta = false;
+      this.buscarVenta = "";
+    },
+    filtroVenta() {
+      this.buscarAnuncio = "Venta";
+      this.buscarVenta = "Venta";
+      this.setRenta = false;
+      this.buscarRenta = "";
+    },
+    filtroGlobal() {
+      this.$emit("filtroPropiedad", {
+        buscarAnuncio: this.buscarAnuncio,
+        buscarRenta: this.buscarRenta,
+        buscarVenta: this.buscarVenta,
+        propiedadCatalogo: this.propiedadCatalogo,
+        min: this.min,
+        max: this.max,
+      });
+    },
+    sinGlobal() {
+      this.setRenta = false;
+      this.setVenta = false;
+      this.buscarAnuncio = "Tipo Anuncio";
+      this.buscarRenta = "";
+      this.buscarVenta = "";
+      this.propiedadCatalogo = "Tipo Propiedad";
+      this.min = 5000000;
+      this.max = 15000000;
+      this.sinFiltro = true;
+      this.$emit("filtroPropiedad", {
+        buscarAnuncio: this.buscarAnuncio,
+        buscarRenta: this.buscarRenta,
+        buscarVenta: this.buscarVenta,
+        propiedadCatalogo: this.propiedadCatalogo,
+        min: this.min,
+        max: this.max,
+        sinFiltro: this.sinFiltro,
+      });
+      this.renderComponent = false;
+
+      this.$nextTick(() => {
+        // Add the component back in
+        this.renderComponent = true;
+      });
+    },
   },
 };
 </script>
@@ -159,7 +272,7 @@ export default {
   margin-right: auto;
   left: 0;
   right: 0;
-  bottom: 40%;
+  bottom: 30%;
   text-align: center;
   background-color: rgba($color: $fondo, $alpha: 0.75);
   border-radius: 15px;
@@ -167,14 +280,6 @@ export default {
   height: auto;
   width: 45rem;
   box-shadow: 0px 15px 20px rgba($color: $gris, $alpha: 0.25);
-}
-
-.subrayado {
-  background-image: linear-gradient(to right, $secundario, $secundario);
-  background-position: bottom center;
-  background-repeat: no-repeat;
-  background-size: 70% 0.2rem;
-  transition: background-size 1s ease;
 }
 
 @media only screen and (max-width: 576px) {
@@ -203,11 +308,7 @@ export default {
   transition: all 0.5s ease;
 }
 
-.filtro-boton:hover,
-.filtro-boton:focus,
-.filtro-boton:active,
-.filtro-boton:visited,
-.filtro-boton:focus-visible {
+.filtro-boton:hover {
   background-color: $secundario !important;
   color: $fondo !important;
   outline: 0 !important;
@@ -215,7 +316,21 @@ export default {
   transform: translateY(-2px);
 }
 
-::v-deep .btn-primary {
+.filtro-boton:focus,
+.filtro-boton:active,
+.filtro-boton:visited,
+.filtro-boton:focus-visible,
+.btn-secondary:not(:disabled):not(.disabled).active {
+  background-color: $fondo;
+  color: $secundario;
+  border: none;
+  outline: 0 !important;
+  transition: all 0.5s ease;
+  transform: translateY(-2px);
+  box-shadow: 0px 15px 20px rgba($color: $gris, $alpha: 0.25);
+}
+
+::v-deep .custom-select {
   font-size: larger;
   border-radius: 0.5rem;
   background-color: $fondo !important;
@@ -225,15 +340,8 @@ export default {
   width: 75%;
   margin: 0 auto;
   transition: all 0.5s ease;
-}
-
-::v-deep .btn-primary:hover,
-.btn-primary:focus,
-.btn-primary:active,
-.btn-primary:visited,
-.btn-primary:focus-visible {
-  transition: all 0.5s ease;
-  transform: translateY(-2px);
+  text-align: center;
+  font-weight: 500;
 }
 
 ::v-deep a {
@@ -254,11 +362,7 @@ export default {
   transition: all 0.5s ease;
 }
 
-.filtro-buscar:hover,
-.filtro-buscar:focus,
-.filtro-buscar:active,
-.filtro-buscar:visited,
-.filtro-buscar:focus-visible {
+.filtro-buscar:hover {
   background-color: $fondo !important;
   color: $secundario !important;
   outline: 0 !important;
@@ -266,34 +370,78 @@ export default {
   transform: translateY(-2px);
 }
 
-input[type="range"] {
-  overflow: hidden;
-  width: 80px;
-  -webkit-appearance: none;
-  background-color: $fondo;
+.filtro-buscar:focus,
+.filtro-buscar:active,
+.filtro-buscar:visited,
+.filtro-buscar:focus-visible {
+  background-color: rgba($color: $secundario, $alpha: 0.6) !important;
+  color: $fondo !important;
+  outline: 0 !important;
+  transition: all 0.5s ease;
+  transform: translateY(-2px);
+}
+
+.filtro-reset {
+  padding: 0.3rem 3rem;
+  font-size: larger;
   border-radius: 0.5rem;
-  padding: 1rem 0.3rem;
+  background-color: $fondo;
+  color: $secundario;
+  border: none;
+  box-shadow: 0px 15px 20px rgba($color: $gris, $alpha: 0.25);
+  font-weight: 500;
+  transition: all 0.5s ease;
 }
 
-input[type="range"]::-webkit-slider-runnable-track {
-  height: 4px;
-  -webkit-appearance: none;
-  background-color: rgba($color: $gris, $alpha: 0.2);
-  margin-top: -1px;
+.filtro-reset:hover {
+  background-color: $secundario !important;
+  color: $fondo !important;
+  outline: 0 !important;
+  transition: all 0.5s ease;
+  transform: translateY(-2px);
 }
 
-input[type="range"]::-webkit-slider-thumb {
-  width: 10px;
-  -webkit-appearance: none;
-  height: 10px;
-  cursor: ew-resize;
-  background: $secundario;
+.filtro-reset:focus,
+.filtro-reset:active,
+.filtro-reset:visited,
+.filtro-reset:focus-visible {
+  background-color: rgba($color: $secundario, $alpha: 0.6) !important;
+  color: $fondo !important;
+  outline: 0 !important;
+  transition: all 0.5s ease;
+  transform: translateY(-2px);
 }
 
 .rango {
   font-size: larger;
-  color: $secundario !important;
+  border-radius: 0.5rem;
+  background-color: $secundario !important;
+  color: $fondo!important;
+  border: none;
+  width: 75%;
+  transition: all 0.5s ease;
+  text-align: center;
   font-weight: 500;
+  padding: 1rem 0;
+}
+
+.valores {
+  font-size: larger;
+  border-radius: 0.5rem;
+  background-color: $secundario !important;
+  color: $fondo !important;
+  border: none;
+  width: 100%;
+  transition: all 0.5s ease;
+  text-align: center;
+  font-weight: 500;
+  padding: 1rem 0;
+}
+
+.rangos {
+  font-size: larger;
+  color: $secundario !important;
+  font-weight: 700;
 }
 
 ::v-deep .modal-header {

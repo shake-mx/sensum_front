@@ -27,6 +27,7 @@
           class="destacado curva sombra my-3"
           footer-tag="footer"
         >
+        
           <b-card-body class="p-0">
             <b-card-text class="precio">
               $ {{ propiedad.precio.toLocaleString("es-MX") }} MXN
@@ -37,12 +38,12 @@
               <p class="descripcion">
                 <font-awesome-icon
                   icon="quote-left"
-                  size="md"
+                  
                   class="color-secundario legible sombra mr-1"
                 />{{ propiedad.subtitulo }}
                 <font-awesome-icon
                   icon="quote-right"
-                  size="md"
+                  
                   class="color-secundario legible sombra ml-1"
                 />
               </p>
@@ -136,19 +137,9 @@
 </template>
 
 <script>
-import sensumService from "@/services/sensumService.js";
 export default {
   name: "Propiedades",
-  data() {
-    return {
-      propiedades: [],
-    };
-  },
-  mounted() {
-    sensumService
-      .getPropiedades()
-      .then((propiedades) => (this.propiedades = propiedades.data));
-  },
+  props:["propiedades"],
 };
 </script>
 
@@ -170,10 +161,10 @@ export default {
   font-size: 1.2rem;
   display: -webkit-box;
   max-width: 100%;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  height: 5rem;
+  height: 3rem;
 }
 
 .card-img-top {
