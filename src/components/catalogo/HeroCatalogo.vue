@@ -83,17 +83,36 @@
             >
           </b-row>
         </b-col>
-
+      
+      <template v-if="buscarAnuncio === 'Anuncio'">
         <b-col cols="12" class="mx-auto mt-1 ">
           <b-form-group block variant="primary" class="my-2">
+            <small class="text-muted color-rojo"
+                  >Selecciona tipo de anuncio que buscas Venta o Renta</small
+                >
             <b-form-select
+            disabled
               :options="tipoPropiedad"
               v-model="propiedadCatalogo"
             ></b-form-select>
           </b-form-group>
         </b-col>
+      </template>
+      <template v-else>
+        <b-col cols="12" class="mx-auto mt-1 ">
+          <b-form-group block variant="primary" class="my-2">
+            <b-form-select
+            
+              :options="tipoPropiedad"
+              v-model="propiedadCatalogo"
+            ></b-form-select>
+          </b-form-group>
+        </b-col>
+      </template>
 
-        <b-col cols="12" class="mt-5">
+        
+
+        <b-col cols="12" class="mt-3">
           <h4 class="rango mx-auto">
             <strong> Rango de Precio</strong> entre
             <strong
@@ -123,19 +142,31 @@
         </b-col>
       </b-row>
       <b-row>
-        <b-col cols="12" class="mt-3">
-          <b-button class="filtro-buscar w-75" @click="filtroGlobal"
+        <template v-if="  propiedadCatalogo === 'Propiedad'" >
+        <b-col cols="12" class="mt-2">
+          <small class="text-muted color-rojo"
+                  >Selecciona tipo de propiedad que buscas</small
+                >
+          <b-button class="filtro-buscar-des w-75" disabled 
             ><strong>Buscar</strong></b-button
           >
         </b-col>
-        <b-col cols="12" class="my-2">
+        </template>
+         <template v-else >
+        <b-col cols="12" class="mt-2">
+          <b-button class="filtro-buscar w-75"  @click="filtroGlobal"
+            ><strong>Buscar</strong></b-button
+          >
+        </b-col>
+        </template>
+        <b-col cols="12" class="my-1">
           <b-button class="filtro-reset w-75" @click="sinGlobal"
-            ><strong>Todas</strong></b-button
+            ><strong>Todas las Propiedades</strong></b-button
           >
         </b-col>
       </b-row>
     </b-container>
-    <!-- <b-modal
+    <b-modal
       title="Ubica tu propiedad"
       scrollable
       hide-footer
@@ -144,12 +175,20 @@
     >
       <b-container>
         <b-row>
-          <b-col>
-     
+          <b-col class="text-center">
+            <h1 class="color-secundario text-center">PROXIMAMENTE</h1>
+            <h4 class="color-primario text-center">
+              En estos momentos no podemos ofrecerte esta funcionalidad, pero pronto estaremos
+              implementando esta funcionalidad.</h4>
+            <font-awesome-icon size="6x" :icon="['fab', 'angellist']"  class="color-secundario"/>
+            
           </b-col>
         </b-row>
       </b-container>
-    </b-modal> -->
+      
+
+
+    </b-modal>
   </div>
 </template>
 
@@ -161,19 +200,19 @@ export default {
     return {
       buscarRenta: "",
       buscarVenta: "",
-      buscarAnuncio: "Tipo Anuncio",
+      buscarAnuncio: "Anuncio",
       setRenta: false,
       setVenta: false,
       sinFiltro: false,
       tipoPropiedad: [
-        { text: "Tipo de Propiedad", value:"Tipo Propiedad" },
+        { text: "Propiedad", value:"Propiedad" },
         { text: "Casa", value: "Casa" },
         { text: "Departamento", value: "Departamento" },
         { text: "Oficina", value: "Oficina" },
         { text: "Remate", value: "Remate" },
         { text: "Terreno", value: "Terreno" },
       ],
-      propiedadCatalogo: "Tipo Propiedad",
+      propiedadCatalogo: "Propiedad",
       min: 5000000,
       max: 15000000,
       renderComponent: true,
@@ -182,7 +221,7 @@ export default {
   components: {
     DoubleRangeSlider,
   },
-  props: {},
+  
   methods: {
     filtroRenta() {
       this.buscarAnuncio = "Renta";
@@ -209,10 +248,10 @@ export default {
     sinGlobal() {
       this.setRenta = false;
       this.setVenta = false;
-      this.buscarAnuncio = "Tipo Anuncio";
+      this.buscarAnuncio = "Anuncio";
       this.buscarRenta = "";
       this.buscarVenta = "";
-      this.propiedadCatalogo = "Tipo Propiedad";
+      this.propiedadCatalogo = "Propiedad";
       this.min = 5000000;
       this.max = 15000000;
       this.sinFiltro = true;
@@ -284,7 +323,8 @@ export default {
 
 @media only screen and (max-width: 576px) {
   .postit {
-    bottom: 10%;
+    top: 20%;
+    bottom: 0;
     height: auto;
     width: 90%;
     padding: 10px 20px;
@@ -329,6 +369,10 @@ export default {
   transform: translateY(-2px);
   box-shadow: 0px 15px 20px rgba($color: $gris, $alpha: 0.25);
 }
+
+
+
+
 
 ::v-deep .custom-select {
   font-size: larger;
@@ -381,6 +425,20 @@ export default {
   transform: translateY(-2px);
 }
 
+.filtro-buscar-des {
+  padding: 0.3rem 3rem;
+  font-size: larger;
+  border-radius: 0.5rem;
+  background-color: $secundario;
+  color: $fondo;
+  border: none;
+  box-shadow: 0px 15px 20px rgba($color: $gris, $alpha: 0.25);
+  font-weight: 500;
+  transition: all 0.5s ease;
+}
+
+
+
 .filtro-reset {
   padding: 0.3rem 3rem;
   font-size: larger;
@@ -413,7 +471,7 @@ export default {
 }
 
 .rango {
-  font-size: larger;
+  font-size: x-small;
   border-radius: 0.5rem;
   background-color: $secundario !important;
   color: $fondo!important;
@@ -426,7 +484,7 @@ export default {
 }
 
 .valores {
-  font-size: larger;
+  font-size: x-small;
   border-radius: 0.5rem;
   background-color: $secundario !important;
   color: $fondo !important;
@@ -439,7 +497,7 @@ export default {
 }
 
 .rangos {
-  font-size: larger;
+  font-size: x-small;
   color: $secundario !important;
   font-weight: 700;
 }

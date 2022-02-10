@@ -7,6 +7,20 @@
         </h1>
       </b-col>
     </b-row>
+    <template v-if="propiedades.length === 0"> 
+      <b-container >
+        <b-row>
+          <b-col class="text-center">
+            <h3 class="color-primario">Por el momento no hemos encontrado una propiedad con los valores que buscas. Envía un correo con la propiedad que estas buscando.</h3>
+          </b-col>
+        </b-row>
+      </b-container>
+      <Contacto/>
+
+    </template>
+    <template v-else>
+
+
     <b-row>
       <b-col
         cols="12"
@@ -133,12 +147,20 @@
         </b-card>
       </b-col>
     </b-row>
+
+
+
+    </template>
   </b-container>
 </template>
 
 <script>
+import Contacto from "@/components/Contacto";
 export default {
   name: "Propiedades",
+  components: {
+    Contacto
+  },
   props:["propiedades"],
 };
 </script>

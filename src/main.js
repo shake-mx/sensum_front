@@ -11,14 +11,14 @@ import VueCarousel from 'vue-carousel';
 import VueScrollTo from 'vue-scrollto';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faEnvelope, faHome, faMapMarkerAlt, faPhoneAlt, faUserSecret, faMapMarkedAlt, faBed, faCubes, faBath, faCar, faPaw, faQuoteLeft, faQuoteRight, faExclamationCircle } from '@fortawesome/free-solid-svg-icons';
-import { faFacebook, faFacebookF, faFacebookSquare, faInstagramSquare, faPagelines, faPinterestSquare, faTiktok,  faWhatsapp,  faYoutubeSquare } from '@fortawesome/free-brands-svg-icons';
+import { faAngellist, faFacebook, faFacebookF, faFacebookSquare, faInstagramSquare, faPagelines, faPinterestSquare, faTiktok,  faWhatsapp,  faYoutubeSquare } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import VueRouter from 'vue-router';
 import router from "./router";
 import VueMoment from 'vue-moment'
 import moment from 'moment-timezone'
 
-library.add(faEnvelope, faHome, faMapMarkerAlt, faPhoneAlt, faUserSecret, faMapMarkedAlt, faBed, faFacebook, faFacebookF, faFacebookSquare, faInstagramSquare, faPinterestSquare, faTiktok,  faWhatsapp,  faYoutubeSquare,faCubes,faBath,faCar,faPagelines,faPaw,faQuoteLeft,faQuoteRight,faExclamationCircle);
+library.add(faEnvelope, faHome, faMapMarkerAlt, faPhoneAlt, faUserSecret, faMapMarkedAlt, faBed, faFacebook, faFacebookF, faFacebookSquare, faInstagramSquare, faPinterestSquare, faTiktok,  faWhatsapp,  faYoutubeSquare,faCubes,faBath,faCar,faPagelines,faPaw,faQuoteLeft,faQuoteRight,faExclamationCircle, faAngellist);
 
 
 
