@@ -8,9 +8,10 @@
       </b-col>
     </b-row>
     <b-row>
-      <b-col cols="12" class="mx-auto">
+      <b-col cols="12" class="mx-auto" >
         <template>
           <carousel
+          
             data-aos="fade-up"
             data-aos-duration="3000"
             :paginationEnabled="true"
@@ -32,11 +33,12 @@
           >
             <slide
               refs="slide"
-              class="my-5"
+              class="my-5 "
               v-for="relevante in relevantes"
               :key="relevante.id"
             >
               <b-card
+                
                 data-aos="fade-up"
                 data-aos-duration="3000"
                 :img-src="relevante.imagenes[0].imagen"
@@ -44,7 +46,7 @@
                 img-top
                 :title="relevante.nombre_propiedad"
                 :sub-title="relevante.direccion"
-                class="destacado curva sombra my-3 mx-3"
+                class="curva sombra my-3 mx-3"
                 footer-tag="footer"
               > 
               
@@ -99,15 +101,15 @@
                     </p>
                   </b-card-text>
                 </b-card-body>
-                <b-card-body class="p-0 mx-0 mb-2">
+                <b-card-body class="p-0 mx-0 ">
                   <b-container class="px-1">
                     <b-row>
-                      <b-col cols="3" class="my-3 text-center">
+                      <b-col cols="3" class="my-0 text-center">
                         <p>
                           <font-awesome-icon
                             icon="cubes"
                             size="lg"
-                            class="color-secundario legible sombra"
+                            class="color-secundario legible"
                           />
                           <span class="mx-0" style="">
                             {{ relevante.construccion_metros.toLocaleString() }}
@@ -115,12 +117,12 @@
                           </span>
                         </p>
                       </b-col>
-                      <b-col cols="3" class="my-3 text-center">
+                      <b-col cols="3" class="my-0 text-center">
                         <p>
                           <font-awesome-icon
                             icon="bed"
                             size="lg"
-                            class="color-secundario legible sombra"
+                            class="color-secundario legible"
                           /><span class="mx-1">
                             {{
                               relevante.recamaras_con_closet +
@@ -129,12 +131,12 @@
                           >
                         </p>
                       </b-col>
-                      <b-col cols="3" class="my-3 text-center">
+                      <b-col cols="3" class="my-0 text-center">
                         <p>
                           <font-awesome-icon
                             icon="bath"
                             size="lg"
-                            class="color-secundario legible sombra"
+                            class="color-secundario legible"
                           />
                           <span class="mx-1">
                             {{
@@ -143,12 +145,12 @@
                           </span>
                         </p>
                       </b-col>
-                      <b-col cols="3" class="my-3 text-center">
+                      <b-col cols="3" class="my-0 text-center">
                         <p>
                           <font-awesome-icon
                             icon="car"
                             size="lg"
-                            class="color-secundario legible sombra"
+                            class="color-secundario legible"
                           />
                           <span class="mx-1"> 2</span>
                         </p>
@@ -249,6 +251,7 @@ export default {
   background-color: rgba($color: $secundario, $alpha: 1);
   padding: 0px;
   margin: 0px;
+  border-radius: 0px 0px 15px 15px;
 }
 
 ::v-deep .precio {

@@ -31,7 +31,6 @@
       <b-row>
         <b-col cols="8" offset="2" class=" py-1">
           <h4 class="color-secundario">
-            Soluciones Inmobiliarias con Sentido Humano
           </h4>
         </b-col>
         <b-col cols="2">
@@ -161,7 +160,7 @@
         </template>
         <b-col cols="12" class="my-1">
           <b-button class="filtro-reset w-75" @click="sinGlobal"
-            ><strong>Todas las Propiedades</strong></b-button
+            ><strong>Todas</strong></b-button
           >
         </b-col>
       </b-row>
@@ -310,10 +309,10 @@ export default {
   margin-left: auto;
   margin-right: auto;
   left: 0;
-  right: 0;
+  right: 25%;
   bottom: 30%;
   text-align: center;
-  background-color: rgba($color: $fondo, $alpha: 0.75);
+  background-color: rgba($color: $fondo, $alpha: 0.5);
   border-radius: 15px;
   padding: 5px 20px;
   height: auto;
@@ -324,9 +323,9 @@ export default {
 @media only screen and (max-width: 576px) {
   .postit {
     top: 20%;
-    bottom: 0;
-    height: auto;
+    right: 0;
     width: 90%;
+    bottom: auto;
     padding: 10px 20px;
   }
   .sala,

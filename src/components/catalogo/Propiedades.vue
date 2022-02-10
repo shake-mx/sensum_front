@@ -63,27 +63,27 @@
               </p>
             </b-card-text>
           </b-card-body>
-          <b-card-body class="p-0 mx-0 mb-2">
+          <b-card-body class="p-0 mx-0">
             <b-container class="px-1">
               <b-row>
-                <b-col cols="3" class="my-3 text-center">
+                <b-col cols="3" class=" text-center">
                   <p>
                     <font-awesome-icon
                       icon="cubes"
                       size="lg"
-                      class="color-secundario legible sombra"
+                      class="color-secundario legible "
                     />
                     <span class="mx-0" style="">
                       {{ propiedad.construccion_metros.toLocaleString() }} m²
                     </span>
                   </p>
                 </b-col>
-                <b-col cols="3" class="my-3 text-center">
+                <b-col cols="3" class=" text-center">
                   <p>
                     <font-awesome-icon
                       icon="bed"
                       size="lg"
-                      class="color-secundario legible sombra"
+                      class="color-secundario legible "
                     /><span class="mx-1">
                       {{
                         propiedad.recamaras_con_closet +
@@ -92,24 +92,24 @@
                     >
                   </p>
                 </b-col>
-                <b-col cols="3" class="my-3 text-center">
+                <b-col cols="3" class=" text-center">
                   <p>
                     <font-awesome-icon
                       icon="bath"
                       size="lg"
-                      class="color-secundario legible sombra"
+                      class="color-secundario legible "
                     />
                     <span class="mx-1">
                       {{ propiedad.bano_completo + propiedad.medio_bano / 2 }}
                     </span>
                   </p>
                 </b-col>
-                <b-col cols="3" class="my-3 text-center">
+                <b-col cols="3" class=" text-center">
                   <p>
                     <font-awesome-icon
                       icon="car"
                       size="lg"
-                      class="color-secundario legible sombra"
+                      class="color-secundario legible "
                     />
                     <span class="mx-1"> 2</span>
                   </p>
@@ -200,6 +200,7 @@ export default {
   background-color: rgba($color: $secundario, $alpha: 1);
   padding: 0px;
   margin: 0px;
+   border-radius: 0px 0px 15px 15px;
 }
 
 ::v-deep .precio {

@@ -1,5 +1,5 @@
 <template>
-  <b-container>
+  <b-container data-aos="fade-up" data-aos-duration="3000">
     <b-row class="justify-content-md-center">
       <b-col cols="12" md="10">
         <b-form class="forma" @submit="enviarCorreo">
