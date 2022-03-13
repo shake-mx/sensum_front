@@ -2,10 +2,16 @@
 <div class="content">
   <div id="my-slider" :se-min="minThreshold" :se-step="step" :se-min-value="min" :se-max-value="max" :se-max="maxThreshold" class="slider">
     <div class="slider-touch-left">
-      <span></span>
+      <span id="tooltip-target-left"></span>
+      <b-tooltip variant="danger" target="tooltip-target-left" show>{{
+                min.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+              }}</b-tooltip>
     </div>
     <div class="slider-touch-right">
-      <span></span>
+      <span id="tooltip-target-right" ></span>
+      <b-tooltip variant="danger" target="tooltip-target-right" show>{{
+                max.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+              }}</b-tooltip>
     </div>
     <div class="slider-line">
       <span></span>
@@ -114,4 +120,14 @@ export default {
   width: 0%;
   background: $secundario;
 }
+.tooltip.b-tooltip-danger .tooltip-inner {
+    color: #fff;
+    background-color: $secundario!important;
+}
+
+.tooltip.b-tooltip-danger.bs-tooltip-top .arrow::before, .tooltip.b-tooltip-danger.bs-tooltip-auto[x-placement^=top] .arrow::before {
+    border-top-color: $secundario!important;
+}
+
+
 </style>

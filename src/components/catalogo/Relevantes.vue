@@ -8,10 +8,9 @@
       </b-col>
     </b-row>
     <b-row>
-      <b-col cols="12" class="mx-auto" >
+      <b-col cols="12" class="mx-auto">
         <template>
           <carousel
-          
             data-aos="fade-up"
             data-aos-duration="3000"
             :paginationEnabled="true"
@@ -38,18 +37,35 @@
               :key="relevante.id"
             >
               <b-card
-                
                 data-aos="fade-up"
                 data-aos-duration="3000"
-                :img-src="relevante.imagenes[0].imagen"
-                :img-alt="relevante.nombre_propiedad"
-                img-top
                 :title="relevante.nombre_propiedad"
                 :sub-title="relevante.direccion"
                 class="curva sombra my-3 mx-3"
                 footer-tag="footer"
-              > 
-              
+              >
+                <template v-if="relevante.imagenes == 0">
+              <b-card-img-lazy
+                class="imagen-card"
+                blank
+                blank-color="#050A30"
+                top
+                :src="require('@/assets/logo.png')"
+                aly="Propiedad Sensum"
+              >
+              </b-card-img-lazy>
+            </template>
+            <template v-else>
+              <b-card-img-lazy
+                class="imagen-card"
+                blank
+                blank-color="#03989E"
+                top
+                :src="relevante.imagenes[0].imagen"
+                :alt="relevante.nombre_propiedad"
+              >
+              </b-card-img-lazy>
+            </template>
                 <template>
                   <div v-for="rel in relevante.amenidades" :key="rel.id">
                     <template v-if="rel.nombre.includes('destacado')">
@@ -59,7 +75,6 @@
                           :src="rel.icono"
                           class="bg-info"
                         />
-                        
                       </div>
                     </template>
                     <template
@@ -77,7 +92,6 @@
                         />
                       </div>
                     </template>
-
                   </div>
                 </template>
                 <b-card-body class="p-0">
@@ -90,12 +104,10 @@
                     <p class="descripcion">
                       <font-awesome-icon
                         icon="quote-left"
-                       
                         class="color-secundario legible sombra mr-1"
-                      />{{ relevante.subtitulo }} 
+                      />{{ relevante.subtitulo }}
                       <font-awesome-icon
                         icon="quote-right"
-                 
                         class="color-secundario legible sombra ml-1"
                       />
                     </p>
@@ -206,13 +218,12 @@ export default {
       relevantes: [],
     };
   },
- mounted() {
-    sensumService
-      .getPropiedades()
-      .then(response => {this.relevantes = response.data.filter((amenidad)=>{return amenidad.amenidades.length >0});
+  mounted() {
+    sensumService.getPropiedades().then((response) => {
+      this.relevantes = response.data.filter((amenidad) => {
+        return amenidad.amenidades.length > 0;
       });
-    
-     
+    });
   },
 };
 </script>
