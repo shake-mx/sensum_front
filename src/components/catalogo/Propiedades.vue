@@ -30,19 +30,20 @@
           v-for="propiedad in propiedades"
           :key="propiedad.id"
         >
+          <router-link tag="div" :to="{path:`/catalogo/${propiedad.folio}`}">
           <b-card
             data-aos="fade-up"
             data-aos-duration="3000"
             :title="propiedad.nombre_propiedad"
             :sub-title="propiedad.direccion"
-            class="destacado curva sombra my-3"
+            class=" curva sombra my-3 tarjeta-propiedad"
             footer-tag="footer"
           >
             <template v-if="propiedad.imagenes == 0">
               <b-card-img-lazy
                 class="imagen-card"
                 blank
-                blank-color="#050A30"
+                blank-color="#03989E"
                 top
                 :src="require('@/assets/logo.png')"
                 aly="Propiedad Sensum"
@@ -134,37 +135,12 @@
                 </b-row>
               </b-container>
             </b-card-body>
-
-            <template #footer>
-              <b-container>
-                <b-row>
-                  <b-col cols="7" class="pt-1  my-auto">
-                    <h5 class="color-texto ml-1 ">
-                      {{ propiedad.agente.nombre }}
-                    </h5>
-                    <!-- <h6 class="color-texto ml-1">{{propiedad.agente.correo}}</h6>
-                  <h6 class="color-texto ml-1">{{propiedad.agente.telefono}}</h6> -->
-                  </b-col>
-                  <b-col cols="5" class="p-0 m-0" align="center">
-                    <b-avatar
-                      :src="propiedad.agente.foto"
-                      size="5rem"
-                    ></b-avatar>
-                  </b-col>
-                  <b-col cols="12" class="py-2">
-                    <b-button
-                      :href="
-                        `https://wa.me/521${propiedad.agente.telefono}?text=Información%20de%20la%20propiedad%20${propiedad.nombre_sensum}`
-                      "
-                      target="blank"
-                      class="filtro-informes w-100 "
-                      ><strong>Solicitar Informes</strong></b-button
-                    >
-                  </b-col>
-                </b-row>
-              </b-container>
-            </template>
           </b-card>
+          </router-link>
+          <div v-if="mostrarModal" class="modal-route " style="overflow:scroll">
+            <router-view :propiedades="propiedades">
+            </router-view>
+        </div>
         </b-col>
       </b-row>
     </template>
@@ -179,6 +155,20 @@ export default {
     Contacto,
   },
   props: ["propiedades"],
+   data() {
+    return {
+      mostrarModal: false,
+    };
+  },
+  watch: {
+    $route:{
+      immediate: true,
+      handler: function(newVal){
+        this.mostrarModal = newVal.meta && newVal.meta.mostrarModal;
+
+      },
+    },
+  },
 };
 </script>
 
@@ -207,9 +197,9 @@ export default {
 
 .card-img-top {
   width: 100%;
-  height: 250px;
+  height: 300px;
   object-fit: cover;
-  border-radius: 15px 15px 0px 0px;
+  border-radius: 15px;
 }
 
 .card-footer {

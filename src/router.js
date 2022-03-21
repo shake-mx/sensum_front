@@ -3,6 +3,7 @@ import VueRouter from "vue-router"
 
 import Home from "../src/components/home/Home";
 import Catalogo from "../src/components/catalogo/Catalogo";
+import ModalPropiedades from "../src/components/catalogo/modalPropiedades";
 
 
 
@@ -20,7 +21,18 @@ const routes = [
     {
         path:"/catalogo",
         name:"Catalogo",
-        component: Catalogo
+        component: Catalogo,
+        meta: { scrollToTop: true },
+        children: [
+            {
+                path: ":folio",
+                component: ModalPropiedades,
+                props: true,
+                meta:{
+                    mostrarModal: true
+                }
+            }
+        ]
     }
 ];
 

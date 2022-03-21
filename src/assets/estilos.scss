@@ -1,7 +1,7 @@
 //---------------------------------------
 // PATRONES DE COLORES
 //---------------------------------------
-$primario: rgba(51, 51, 51);
+$primario: rgba(51, 51, 51,1);
 // $secundario: rgb(255,222,89);
 $secundario: rgb(3,152,158);
 $texto: rgb(255,255,255);
@@ -16,6 +16,7 @@ $plata: rgb(247,248,249);
 $whats: rgb(37,211,102);
 $face:rgb(59,89,152);
 $fondo: #fefffe;
+$plata:#909497;
 @font-face {
   font-family: "Cerebri Sans Book";
   src: local("Cerebri Sans Book"),
@@ -52,6 +53,9 @@ label,
 a {
   color: $texto !important;
   text-decoration: none;
+}
+.color-plata{
+  color: $plata !important;
 }
 
 .color-negro{
@@ -405,5 +409,99 @@ li{
   }
 
 } 
+
+
+
+//---------------------------------------
+// Modal Sección
+//----------
+
+
+.modal-route {
+  width: 20%;
+  height: auto;
+  position: fixed;
+  z-index: 99999;
+  top: 25%;
+  bottom: 25%;
+  left: 40%;
+  background: rgba($color: #000000, $alpha: 0.5);
+  transition: all 0.3s ease-in-out;
+ }
+
+ .modal-borde{
+   border: 5px solid $secundario;
+ }
+
+ .titulo-modal {
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  width: 100%;
+  padding: 1rem 0;
+  color: $secundario;
+}
+
+// html, body {
+//   max-width: 100%;
+//   overflow-x: hidden;
+// }
+
+.imagen-modal{
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.imagen-card{
+  width: 100%;
+  height: 450px;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 1920px) {
+
+  .modal-route {
+    width: 50%;
+    top: 5%;
+    bottom: 5%;
+    left: 25%;
+   }
+
+   .imagen-modal{
+    height: 650px;
+  }
+  
+}
+
+
+@media only screen and (max-width: 992px) {
+
+  .modal-route {
+    width: 64%;
+    top: 10%;
+    bottom: 10%;
+    left: 18%;
+   }
+}
+
+@media only screen and (max-width: 576px) {
+
+  .modal-route {
+    width: 90%;
+    top: 15%;
+    bottom: 15%;
+    left: 5%;
+   }
+   .imagen-modal{
+    height: auto; 
+  }
+}
+
+
+.tarjeta-propiedad:hover{
+  cursor: pointer;
+}
+
 
 

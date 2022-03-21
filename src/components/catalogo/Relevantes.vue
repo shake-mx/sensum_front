@@ -171,35 +171,6 @@
                   </b-container>
                 </b-card-body>
 
-                <template #footer>
-                  <b-container>
-                    <b-row>
-                      <b-col cols="7" class="pt-1  my-auto">
-                        <h5 class="color-texto ml-1 ">
-                          {{ relevante.agente.nombre }}
-                        </h5>
-                        <!-- <h6 class="color-texto ml-1">{{propiedad.agente.correo}}</h6>
-                  <h6 class="color-texto ml-1">{{propiedad.agente.telefono}}</h6> -->
-                      </b-col>
-                      <b-col cols="5" class="p-0 m-0" align="center">
-                        <b-avatar
-                          :src="relevante.agente.foto"
-                          size="5rem"
-                        ></b-avatar>
-                      </b-col>
-                      <b-col cols="12" class="py-2">
-                        <b-button
-                          :href="
-                            `https://wa.me/521${relevante.agente.telefono}?text=Información%20de%20la%20propiedad%20${relevante.nombre_sensum}`
-                          "
-                          target="blank"
-                          class="filtro-informes w-100 "
-                          ><strong>Solicitar Informes</strong></b-button
-                        >
-                      </b-col>
-                    </b-row>
-                  </b-container>
-                </template>
               </b-card>
             </slide>
           </carousel>
@@ -253,9 +224,10 @@ export default {
 
 .card-img-top {
   width: 100%;
-  height: 250px;
+  height: 300px;
   object-fit: cover;
-  border-radius: 15px 15px 0px 0px;
+  border-radius: 15px;
+  
 }
 
 .card-footer {
