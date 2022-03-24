@@ -45,7 +45,7 @@
                 blank
                 blank-color="#03989E"
                 top
-                :src="require('@/assets/logo.png')"
+                :src="require('@/assets/load_house.png')"
                 aly="Propiedad Sensum"
               >
               </b-card-img-lazy>
@@ -84,7 +84,7 @@
             <b-card-body class="p-0 mx-0">
               <b-container class="px-1">
                 <b-row>
-                  <b-col cols="3" class=" text-center">
+                  <b-col cols="4" class=" text-center">
                     <p>
                       <font-awesome-icon
                         icon="cubes"
@@ -96,7 +96,7 @@
                       </span>
                     </p>
                   </b-col>
-                  <b-col cols="3" class=" text-center">
+                  <b-col cols="4" class=" text-center">
                     <p>
                       <font-awesome-icon
                         icon="bed"
@@ -110,7 +110,7 @@
                       >
                     </p>
                   </b-col>
-                  <b-col cols="3" class=" text-center">
+                  <b-col cols="4" class=" text-center">
                     <p>
                       <font-awesome-icon
                         icon="bath"
@@ -122,7 +122,7 @@
                       </span>
                     </p>
                   </b-col>
-                  <b-col cols="3" class=" text-center">
+                  <!-- <b-col cols="3" class=" text-center">
                     <p>
                       <font-awesome-icon
                         icon="car"
@@ -131,7 +131,7 @@
                       />
                       <span class="mx-1"> 2</span>
                     </p>
-                  </b-col>
+                  </b-col> -->
                 </b-row>
               </b-container>
             </b-card-body>
@@ -169,7 +169,7 @@ export default {
       },
     },
   },
-};
+  };
 </script>
 
 <style lang="scss" scoped>

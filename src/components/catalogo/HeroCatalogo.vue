@@ -23,83 +23,55 @@
         <b-container fluid class="p-0 m-0 recamara"> </b-container>
       </slide>
     </carousel>
-    <b-container
-      class="postit legible"
-    >
+    <b-container class="postit legible">
       <b-row>
         <b-col cols="8" offset="2" class=" py-1">
           <h4 class="color-secundario"></h4>
         </b-col>
         <b-col cols="2">
-          <font-awesome-icon
+          <!-- <font-awesome-icon
             icon="map-marked-alt"
             v-b-modal.modal-mapa
             size="2x"
             class="color-secundario legible sombra"
-          />
+          /> -->
         </b-col>
       </b-row>
 
       <b-row class="justify-content-center  mx-auto">
-        <b-col cols="6" class="my-3">
-          <b-button
-            class="filtro-boton"
-            @click="filtroVenta"
-            :pressed.sync="setVenta"
-            >Venta</b-button
+        <b-col cols="12">
+          <b-form-group
+            label="Selecciona el tipo de anuncio que buscas"
+            v-slot="{ ariaDescribedby }" class="m-0 p-0"
           >
+            <b-form-radio-group
+              v-model="buscarAnuncio"
+              :options="tipoAnuncio"
+              :aria-describedby="ariaDescribedby"
+              name="radio-anuncio"
+              class="color-secundario"
+            ></b-form-radio-group>
+          </b-form-group>
         </b-col>
-        <b-col cols="6" class="my-3">
-          <b-button
-            class="filtro-boton"
-            @click="filtroRenta"
-            :pressed.sync="setRenta"
-            >Renta</b-button
+        <b-col cols="12" >
+          <b-form-group
+            label="Selecciona tipo de propiedad que buscas"
+            v-slot="{ ariaDescribedby }" class="m-0 p-0"
           >
+            <b-form-radio-group
+              :aria-describedby="ariaDescribedby"
+              :options="tipoPropiedad"
+              v-model="propiedadCatalogo"
+              name="radios-propiedad"
+              class="color-secundario"
+            ></b-form-radio-group>
+          </b-form-group>
         </b-col>
-      </b-row>
-      <b-row class="mx-auto">
-        <template v-if="buscarAnuncio === 'Anuncio'">
-          <b-col cols="12" class="mx-auto ">
-            <b-form-group block variant="primary" class="mb-2 color-rojo ">
-                Selecciona tipo de anuncio que buscas Venta o Renta            
-              <b-form-select
-                disabled
-                :options="tipoPropiedad"
-                v-model="propiedadCatalogo"
-              ></b-form-select>
-            </b-form-group>
-          </b-col>
-        </template>
-        <template v-else>
-          <template v-if="propiedadCatalogo === 'Propiedad'">
-            <b-col cols="12" class="mx-auto">
-              <b-form-group block variant="primary" class="mb-2">
-                <b-form-select
-                  :options="tipoPropiedad"
-                  v-model="propiedadCatalogo"
-                ></b-form-select>
-              </b-form-group>
-            </b-col>
-            <b-col cols="12" class="mt-2 color-rojo">
-              Selecciona tipo de propiedad que buscas
-            </b-col>
-          </template>
-          <template v-else>
-            <b-col cols="12" class="mx-auto mt-1 ">
-              <b-form-group block variant="primary" class="my-2">
-                <b-form-select
-                  :options="tipoPropiedad"
-                  v-model="propiedadCatalogo"
-                ></b-form-select>
-              </b-form-group>
-            </b-col>
-          </template>
-        </template>
       </b-row>
 
       <b-row class="mx-auto">
         <b-col cols="12" class="my-auto ">
+          <legend>Selecciona el rango de precios para la propiedad</legend>
           <DoubleRangeSlider
             class="w-75 mx-auto"
             v-if="renderComponent"
@@ -119,30 +91,18 @@
           </b-row>
         </b-col>
       </b-row>
-      <b-row class="w-75 mx-auto mt-0">
-        <b-col cols="6" class="mt-1 mx-auto  px-2">
-          <h4 class="valores mx-auto">
-            <strong>{{ buscarAnuncio }}</strong>
-          </h4>
-        </b-col>
-        <b-col cols="6" class="mt-1 mx-auto px-2">
-          <h4 class="valores mx-auto">
-            <strong>{{ propiedadCatalogo }}</strong>
-          </h4>
-        </b-col>
-      </b-row>
       <b-row>
         <template v-if="propiedadCatalogo === 'Propiedad'">
           <b-col cols="12" class="mt-2">
             <b-button disabled class="filtro-buscar w-75" @click="filtroGlobal"
-              ><strong>Buscar</strong></b-button
+              ><strong>Usar Filtro</strong></b-button
             >
           </b-col>
         </template>
         <template v-else>
           <b-col cols="12" class="mt-2">
             <b-button class="filtro-buscar w-75" @click="filtroGlobal"
-              ><strong>Buscar</strong></b-button
+              ><strong>Usar Filtro</strong></b-button
             >
           </b-col>
         </template>
@@ -192,8 +152,12 @@ export default {
       setRenta: false,
       setVenta: false,
       sinFiltro: false,
+      setVariable: "propiedades",
+      tipoAnuncio: [
+        { text: "Venta", value: "Venta" },
+        { text: "Renta", value: "Renta" },
+      ],
       tipoPropiedad: [
-        { text: "Propiedad", value: "Propiedad" },
         { text: "Casa", value: "Casa" },
         { text: "Departamento", value: "Departamento" },
         { text: "Oficina", value: "Oficina" },
@@ -231,6 +195,7 @@ export default {
         propiedadCatalogo: this.propiedadCatalogo,
         min: this.min,
         max: this.max,
+        setVariable: this.setVariable,
       });
     },
     sinGlobal() {
@@ -251,6 +216,7 @@ export default {
         min: this.min,
         max: this.max,
         sinFiltro: this.sinFiltro,
+        setVariable: this.setVariable,
       });
       this.renderComponent = false;
 
@@ -508,5 +474,22 @@ export default {
   width: 100%;
   padding: 1rem 0;
   color: $secundario !important;
+}
+
+legend{
+  display: block;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    font-size: 13px;
+    line-height: inherit;
+    color: inherit;
+    white-space: normal;
+}
+
+::v-deep .custom-radio .custom-control-input:checked ~ .custom-control-label::after {
+    background-color: $secundario!important;
+    border-radius: 20px;
+    
 }
 </style>

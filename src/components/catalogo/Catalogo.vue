@@ -11,7 +11,7 @@
     <Accion2 />
     <br />
     <br />
-    <Propiedades :propiedades="propiedades" />
+    <Propiedades :propiedades="propiedades" id="propiedades"/>
 
     <Testimoniales />
     <Footer />
@@ -40,6 +40,7 @@ export default {
       propiedadCatalogo:"",
       min:"",
       max:"",
+      setVariable: "",
       tipoAnuncio:[],
       options:[],
       sinFiltro:false,
@@ -64,11 +65,17 @@ export default {
       this.min = options.min;
       this.max = options.max;
       this.sinFiltro = options.sinFiltro;
+      this.setVariable = options.setVariable;
+       
+       document.getElementById("propiedades").scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
 
       if(this.sinFiltro){
        sensumService
       .getPropiedades()
-      .then((propiedades) => (this.propiedades = propiedades.data.slice(0, 6)))
+      .then((propiedades) => (this.propiedades = propiedades.data.slice(0, 99)))
       .catch((error) => console.log(error));
       }else{
       sensumService

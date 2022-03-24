@@ -16,7 +16,7 @@ $plata: rgb(247,248,249);
 $whats: rgb(37,211,102);
 $face:rgb(59,89,152);
 $fondo: #fefffe;
-$plata:#909497;
+$plateado:#909497;
 @font-face {
   font-family: "Cerebri Sans Book";
   src: local("Cerebri Sans Book"),
@@ -41,6 +41,9 @@ html {
   outline: -webkit-focus-ring-color auto 0px;
 }
 
+.fixed-top{
+  z-index: 1100!important;
+}
 h1,
 h2,
 h3,
@@ -49,7 +52,6 @@ h5,
 h6,
 p,
 li,
-label,
 a {
   color: $texto !important;
   text-decoration: none;

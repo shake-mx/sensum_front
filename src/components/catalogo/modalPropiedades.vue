@@ -28,11 +28,18 @@
                 img-width="800"
                 img-height="800"
               >
-                <b-carousel-slide
+                <template v-if="filtro.imagenes">
+                  <b-carousel-slide
                   v-for="imagen in filtro.imagenes"
                   :key="imagen.id"
                   :img-src="imagen.imagen"
                 ></b-carousel-slide>
+                </template>
+                <template>
+                  <b-carousel-slide
+                    :img-src="require('@/assets/load_house.png')"
+                  ></b-carousel-slide>
+                </template>
               </b-carousel>
             </b-col>
             <b-col md="6" class="p-0 ">
