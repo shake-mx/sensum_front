@@ -92,19 +92,20 @@
         </b-col>
       </b-row>
       <b-row>
-        <template v-if="propiedadCatalogo === 'Propiedad'">
+        <template v-if="propiedadCatalogo != 'Propiedad' && buscarAnuncio != 'Anuncio'">
           <b-col cols="12" class="mt-2">
-            <b-button disabled class="filtro-buscar w-75" @click="filtroGlobal"
+            <b-button class="filtro-buscar w-75" @click="filtroGlobal"
               ><strong>Usar Filtro</strong></b-button
             >
           </b-col>
         </template>
         <template v-else>
           <b-col cols="12" class="mt-2">
-            <b-button class="filtro-buscar w-75" @click="filtroGlobal"
+            <b-button disabled class="filtro-buscar w-75" @click="filtroGlobal"
               ><strong>Usar Filtro</strong></b-button
             >
           </b-col>
+         
         </template>
         <b-col cols="12" class="my-1">
           <b-button class="filtro-reset w-75" @click="sinGlobal"
@@ -165,8 +166,8 @@ export default {
         { text: "Terreno", value: "Terreno" },
       ],
       propiedadCatalogo: "Propiedad",
-      min: 5000000,
-      max: 15000000,
+      min: "5000000",
+      max: "15000000",
       renderComponent: true,
     };
   },

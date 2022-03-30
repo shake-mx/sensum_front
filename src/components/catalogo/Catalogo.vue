@@ -90,7 +90,7 @@ export default {
   mounted() {
     sensumService
       .getPropiedades()
-      .then((propiedades) => (this.propiedades = propiedades.data.slice(0, 30)))
+      .then((propiedades) => (this.propiedades = propiedades.data))
       .catch((error) => console.log(error));
   },
   watch:{

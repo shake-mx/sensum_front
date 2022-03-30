@@ -26,7 +26,8 @@
         </b-col>
         <b-col cols="12" md="4" class="my-4">
           <b-embed
-            type="iframe"
+            
+            type="embed"
             class="curva"
             aspect="1by1"
             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15027.735302596288!2d-99.2070966!3d19.6728284!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x164bf27d3dffa4ef!2sBUSINESS%20%26%20THERAPY%20PLACE%20%7C%20SAN%20MARCOS!5e0!3m2!1ses-419!2smx!4v1638650043692!5m2!1ses-419!2smx"

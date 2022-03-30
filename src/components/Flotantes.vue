@@ -20,7 +20,7 @@
         />
       </a>
       <br />
-      <router-link to="/catalogo">
+      <router-link  :to="'/catalogo'" >
         <font-awesome-icon
           class="color-white bg-dinamico p-2 logo-flotante  "
           size="4x"
@@ -30,7 +30,6 @@
 
       <br />
     </div>
-    <router-view></router-view>
   </div>
 </template>
 

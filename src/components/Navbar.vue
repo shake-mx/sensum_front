@@ -25,7 +25,6 @@
 
 
     </b-container>
-  <router-view></router-view>
   </b-navbar>
   
 </template>

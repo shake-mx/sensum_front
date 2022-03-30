@@ -5,8 +5,11 @@
         <b-col cols="12">
           <b-row>
             <b-col class="titulo-modal" offset="2" cols="8">
+              <h3 class="color-secundario tipoA">
+                <b> {{ filtro.tipo_anuncio }} </b>
+              </h3>
               <h3 class="color-primario ">{{ filtro.nombre_propiedad }}</h3>
-              <hr class="bg-secundario">
+              <hr class="bg-secundario" />
             </b-col>
             <b-col cols="2" class=" text-right">
               <router-link to="./">
@@ -30,12 +33,12 @@
               >
                 <template v-if="filtro.imagenes">
                   <b-carousel-slide
-                  v-for="imagen in filtro.imagenes"
-                  :key="imagen.id"
-                  :img-src="imagen.imagen"
-                ></b-carousel-slide>
+                    v-for="imagen in filtro.imagenes"
+                    :key="imagen.id"
+                    :img-src="imagen.imagen"
+                  ></b-carousel-slide>
                 </template>
-                <template>
+                <template v-else>
                   <b-carousel-slide
                     :img-src="require('@/assets/load_house.png')"
                   ></b-carousel-slide>
@@ -50,7 +53,11 @@
                       <h3 class="color-secundario">
                         Precio<br />
                         <span class="mx-0 font-weight-bolder">
-                          $ {{ filtro.precio.toLocaleString("es-MX") }} MXN
+                          $
+                          {{
+                            filtro ? filtro.precio.toLocaleString("es-MX") : ""
+                          }}
+                          MXN
                         </span>
                       </h3>
                     </b-col>
@@ -62,7 +69,12 @@
                           class="color-secundario legible "
                         />
                         <span class="mx-0">
-                          {{ filtro.construccion_metros.toLocaleString() }} m²
+                          {{
+                            filtro
+                              ? filtro.construccion_metros.toLocaleString()
+                              : ""
+                          }}
+                          m²
                         </span>
                       </h5>
                     </b-col>
@@ -126,11 +138,13 @@
                         <span class="ml-2 font-weight-bolder">
                           {{
                             "La propiedad tiene una longitud de " +
-                              (filtro.terreno_metros.toLocaleString() +
-                                " m² de superficie, ") +
+                              (filtro
+                                ? filtro.terreno_metros.toLocaleString()
+                                : "" + " m² de superficie, ") +
                               "de los cuales " +
-                              (filtro.construccion_metros.toLocaleString() +
-                                " m² son de construcción. ") +
+                              (filtro
+                                ? filtro.construccion_metros.toLocaleString()
+                                : "" + " m² son de construcción. ") +
                               "Cuenta con " +
                               filtro.niveles +
                               " nivel(es) " +
@@ -152,11 +166,10 @@
                               (filtro.gimnasio ? "Gimnasio, " : "") +
                               "para mayor infromación consultar con el Profesional Inmobiliario."
                           }}
-                          <br>
-                          <br>
+                          <br />
+                          <br />
                           <span class="color-secundario">
-                          "Sensum Soluciones Inmobiliarias con Sentido 
-                          Humano"
+                            "Sensum Soluciones Inmobiliarias con Sentido Humano"
                           </span>
                         </span>
                       </h5>
@@ -166,9 +179,9 @@
               </b-row>
             </b-col>
             <b-col md="6" class="bg-secundario p-0 m-0 " align-self="stretch">
-              <b-row class="p-0 m-0 h-100" >
+              <b-row class="p-0 m-0 h-100">
                 <b-col cols="12" class="mt-3" align="center">
-                  <template v-if="filtro.agente.foto">
+                  <template v-if="filtro ? filtro.agente.foto : ''">
                     <b-avatar :src="filtro.agente.foto" size="10rem"></b-avatar>
                   </template>
                   <template v-else>
@@ -185,7 +198,7 @@
                       size="lg"
                       :icon="['fas', 'user']"
                     />
-                    {{ filtro.agente.nombre }}
+                    {{ filtro ? filtro.agente.nombre : "" }}
                   </h5>
                   <h5 class="color-texto text-center ">
                     <font-awesome-icon
@@ -201,14 +214,18 @@
                       size="lg"
                       :icon="['fas', 'envelope']"
                     />
-                    {{ filtro.agente.correo }}
+                    {{ filtro ? filtro.agente.correo : "informes@sensum.mx" }}
                   </h5>
                 </b-col>
 
                 <b-col cols="8" class="mt-3 mx-auto">
                   <b-button
                     :href="
-                      `https://wa.me/521${filtro.agente.telefono}?text=Información%20de%20la%20propiedad%20${filtro.nombre_sensum}`
+                      `https://wa.me/521${
+                        filtro ? filtro.agente.telefono : '5630296930'
+                      }?text=Información%20de%20la%20propiedad%20${
+                        filtro.nombre_sensum
+                      }`
                     "
                     target="blank"
                     class="filtro-informes w-100 text-center"
@@ -241,16 +258,20 @@ export default {
   data() {
     return {
       propiedad: "",
+      find: [],
+      phoneNumberString: "",
     };
   },
   computed: {
     filtro() {
-      return this.propiedades.find(
-        (propiedad) => propiedad.folio === this.folio
-      );
+      return this.propiedades
+        ? this.propiedades.find((propiedad) => propiedad.folio === this.folio)
+        : "";
     },
     formatPhoneNumber(phoneNumberString) {
-      phoneNumberString = this.filtro.agente.telefono;
+      phoneNumberString = this.filtro
+        ? this.filtro.agente.telefono
+        : "5630296930";
       var cleaned = ("" + phoneNumberString).replace(/\D/g, "");
       var match = cleaned.match(/^(\d{2})(\d{4})(\d{4})$/);
       if (match) {
@@ -303,5 +324,11 @@ span {
   transition: all 0.5s ease;
   transform: translateY(-2px);
   border-color: $fondo !important;
+}
+
+.tipoA{
+ font-size: 3rem;
+ color: $secundario;
+ opacity: 0.9;
 }
 </style>

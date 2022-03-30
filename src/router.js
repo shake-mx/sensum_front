@@ -19,6 +19,12 @@ const routes = [
         component: Home
     },
     {
+        path:"/propiedades",
+        name:"Propiedades",
+        component: Catalogo,
+        meta: { scrollToTop: true },
+    },
+    {
         path:"/catalogo",
         name:"Catalogo",
         component: Catalogo,

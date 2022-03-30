@@ -8,7 +8,7 @@
       </b-col>
     </b-row>
     <template v-if="propiedades.length === 0">
-      <b-container>
+      <b-container data-aos="fade-up" data-aos-duration="3000">
         <b-row>
           <b-col class="text-center">
             <h3 class="color-primario">
@@ -30,99 +30,104 @@
           v-for="propiedad in propiedades"
           :key="propiedad.id"
         >
-          <router-link tag="div" :to="{path:`/catalogo/${propiedad.folio}`}">
-          <b-card
-            data-aos="fade-up"
-            data-aos-duration="3000"
-            :title="propiedad.nombre_propiedad"
-            :sub-title="propiedad.direccion"
-            class=" curva sombra my-3 tarjeta-propiedad"
-            footer-tag="footer"
-          >
-            <template v-if="propiedad.imagenes == 0">
-              <b-card-img-lazy
-                class="imagen-card"
-                blank
-                blank-color="#03989E"
-                top
-                :src="require('@/assets/load_house.png')"
-                aly="Propiedad Sensum"
-              >
-              </b-card-img-lazy>
-            </template>
-            <template v-else>
-              <b-card-img-lazy
-                class="imagen-card"
-                blank
-                blank-color="#03989E"
-                top
-                :src="propiedad.imagenes[0].imagen"
-                :alt="propiedad.nombre_propiedad"
-              >
-              </b-card-img-lazy>
-            </template>
+          <router-link  :to="{ path: `/catalogo/${propiedad.folio}` }">
+            <b-card
+              data-aos="fade-up"
+              data-aos-duration="3000"
+              :title="propiedad.nombre_propiedad"
+              :sub-title="propiedad.direccion"
+              class=" curva sombra my-3 tarjeta-propiedad"
+              footer-tag="footer"
+            >
+              <template v-if="propiedad.imagenes == 0">
+                <b-card-img-lazy
+                  class="imagen-card"
+                  blank
+                  blank-color="#03989E"
+                  top
+                  :src="require('@/assets/load_house.png')"
+                  aly="Propiedad Sensum"
+                >
+                </b-card-img-lazy>
+              </template>
+              <template v-else>
+                <b-card-img-lazy
+                  class="imagen-card"
+                  blank
+                  blank-color="#03989E"
+                  top
+                  :src="propiedad.imagenes[0].imagen"
+                  :alt="propiedad.nombre_propiedad"
+                >
+                </b-card-img-lazy>
+              </template>
 
-            <b-card-body class="p-0">
-              <b-card-text class="precio">
-                $ {{ propiedad.precio.toLocaleString("es-MX") }} MXN
-              </b-card-text>
-            </b-card-body>
-            <b-card-body>
-              <b-card-text>
-                <p class="descripcion">
-                  <font-awesome-icon
-                    icon="quote-left"
-                    class="color-secundario legible sombra mr-1"
-                  />{{ propiedad.subtitulo }}
-                  <font-awesome-icon
-                    icon="quote-right"
-                    class="color-secundario legible sombra ml-1"
-                  />
-                </p>
-              </b-card-text>
-            </b-card-body>
-            <b-card-body class="p-0 mx-0">
-              <b-container class="px-1">
-                <b-row>
-                  <b-col cols="4" class=" text-center">
-                    <p>
-                      <font-awesome-icon
-                        icon="cubes"
-                        size="lg"
-                        class="color-secundario legible "
-                      />
-                      <span class="mx-0" style="">
-                        {{ propiedad.construccion_metros.toLocaleString() }} m²
-                      </span>
-                    </p>
-                  </b-col>
-                  <b-col cols="4" class=" text-center">
-                    <p>
-                      <font-awesome-icon
-                        icon="bed"
-                        size="lg"
-                        class="color-secundario legible "
-                      /><span class="mx-1">
-                        {{
-                          propiedad.recamaras_con_closet +
-                            propiedad.recamaras_sin_closet
-                        }}</span
-                      >
-                    </p>
-                  </b-col>
-                  <b-col cols="4" class=" text-center">
-                    <p>
-                      <font-awesome-icon
-                        icon="bath"
-                        size="lg"
-                        class="color-secundario legible "
-                      />
-                      <span class="mx-1">
-                        {{ propiedad.bano_completo + propiedad.medio_bano / 2 }}
-                      </span>
-                    </p>
-                  </b-col>
-                  <!-- <b-col cols="3" class=" text-center">
+              <b-card-body class="p-0">
+                <b-card-text class="precio">
+                  $ {{ propiedad.precio.toLocaleString("es-MX") }} MXN
+                </b-card-text>
+              </b-card-body>
+              <b-card-body>
+                <b-card-text>
+                  <p class="descripcion">
+                    <font-awesome-icon
+                      icon="quote-left"
+                      class="color-secundario legible sombra mr-1"
+                    />{{ propiedad.subtitulo }}
+                    <font-awesome-icon
+                      icon="quote-right"
+                      class="color-secundario legible sombra ml-1"
+                    />
+                  </p>
+                </b-card-text>
+              </b-card-body>
+              <b-card-body class="p-0 mx-0">
+                <b-container class="px-1">
+                  <b-row>
+                    <b-col cols="4" class=" text-center">
+                      <p>
+                        <font-awesome-icon
+                          icon="cubes"
+                          size="lg"
+                          class="color-secundario legible "
+                        />
+                        <span class="mx-0" style="">
+                          {{
+                            propiedad.construccion_metros.toLocaleString()
+                          }}
+                          m²
+                        </span>
+                      </p>
+                    </b-col>
+                    <b-col cols="4" class=" text-center">
+                      <p>
+                        <font-awesome-icon
+                          icon="bed"
+                          size="lg"
+                          class="color-secundario legible "
+                        /><span class="mx-1">
+                          {{
+                            propiedad.recamaras_con_closet +
+                              propiedad.recamaras_sin_closet
+                          }}</span
+                        >
+                      </p>
+                    </b-col>
+                    <b-col cols="4" class=" text-center">
+                      <p>
+                        <font-awesome-icon
+                          icon="bath"
+                          size="lg"
+                          class="color-secundario legible "
+                        />
+                        <span class="mx-1">
+                          {{
+                            propiedad.bano_completo + propiedad.medio_bano / 2
+                          }}
+                        </span>
+                      </p>
+                    </b-col>
+                    <!-- <b-col cols="3" class=" text-center">
                     <p>
                       <font-awesome-icon
                         icon="car"
@@ -132,15 +137,14 @@
                       <span class="mx-1"> 2</span>
                     </p>
                   </b-col> -->
-                </b-row>
-              </b-container>
-            </b-card-body>
-          </b-card>
+                  </b-row>
+                </b-container>
+              </b-card-body>
+            </b-card>
           </router-link>
           <div v-if="mostrarModal" class="modal-route " style="overflow:scroll">
-            <router-view :propiedades="propiedades">
-            </router-view>
-        </div>
+            <router-view :propiedades="propiedades"> </router-view>
+          </div>
         </b-col>
       </b-row>
     </template>
@@ -155,21 +159,20 @@ export default {
     Contacto,
   },
   props: ["propiedades"],
-   data() {
+  data() {
     return {
       mostrarModal: false,
     };
   },
   watch: {
-    $route:{
+    $route: {
       immediate: true,
-      handler: function(newVal){
+      handler: function(newVal) {
         this.mostrarModal = newVal.meta && newVal.meta.mostrarModal;
-
       },
     },
   },
-  };
+};
 </script>
 
 <style lang="scss" scoped>

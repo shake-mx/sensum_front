@@ -38,11 +38,11 @@ export default {
       default: 1000
     },
     min: {
-      type: Number,
+      type: String,
       required: true
     },
     max: {
-      type: Number,
+      type: String,
       required: true
     }
   },
