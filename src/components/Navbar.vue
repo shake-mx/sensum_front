@@ -1,7 +1,7 @@
 <template>
-  <b-navbar toggleable type="dark" class="bg-filter fixed-top ">
+  <b-navbar toggleable type="dark" class="bg-filter fixed-top " >
     <b-container >
-    <b-navbar-brand href="https://sensum.mx/">
+    <b-navbar-brand href="/">
       <img
         src="@/assets/logo.png"
         class="d-inline-block align-top navLogo"

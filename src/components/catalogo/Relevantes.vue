@@ -8,175 +8,167 @@
       </b-col>
     </b-row>
     <b-row>
-      <template v-if="this.loading">
-        <Loading data-aos="fade-up" data-aos-duration="3000" />
-      </template>
-      <template v-else>
+      <template v-if="relevantes.length > 0">
         <b-col cols="12" class="mx-auto">
-          <template v-if="relevantes.length > 0">
-            <carousel
-              data-aos="fade-up"
-              data-aos-duration="3000"
-              :paginationEnabled="true"
-              :perPageCustom="[
-                [0, 1],
-                [576, 2],
-                [1024, 3],
-              ]"
-              :mouseDrag="false"
-              :touchDrag="false"
-              :centerMode="true"
-              :paginationColor="'#03989E'"
-              :paginationActiveColor="'#545454'"
-              autoplay
-              loop
-              :autoplayTimeout="5000"
-              easing="ease-in"
-              id="inicioCatalogo"
+          <carousel
+            :paginationEnabled="true"
+            :perPageCustom="[
+              [0, 1],
+              [576, 2],
+              [1024, 3],
+            ]"
+            :mouseDrag="false"
+            :touchDrag="false"
+            :centerMode="true"
+            :paginationColor="'#03989E'"
+            :paginationActiveColor="'#545454'"
+            autoplay
+            loop
+            :autoplayTimeout="5000"
+            easing="ease-in"
+            id="inicioCatalogo"
+          >
+            <slide
+              refs="slide"
+              class="my-5 "
+              v-for="relevante in destacado"
+              :key="relevante.id"
             >
-              <slide
-                refs="slide"
-                class="my-5 "
-                v-for="relevante in destacado"
-                :key="relevante.id"
+             <router-link  :to="{ path: `/catalogo/${relevante.folio}` }">
+              <b-card
+                data-aos="fade-up"
+                data-aos-duration="3000"
+                :title="relevante.nombre_propiedad"
+                :sub-title="relevante.direccion"
+                class="curva sombra my-3 mx-3"
+                footer-tag="footer"
               >
-                <b-card
-                  data-aos="fade-up"
-                  data-aos-duration="3000"
-                  :title="relevante.nombre_propiedad"
-                  :sub-title="relevante.direccion"
-                  class="curva sombra my-3 mx-3"
-                  footer-tag="footer"
-                >
-                  <template v-if="relevante.imagenes == 0">
-                    <b-card-img-lazy
-                      class="imagen-card"
-                      blank
-                      blank-color="#050A30"
-                      top
-                      :src="require('@/assets/load_house.png')"
-                      aly="Propiedad Sensum"
-                    >
-                    </b-card-img-lazy>
-                  </template>
-                  <template v-else>
-                    <b-card-img-lazy
-                      class="imagen-card"
-                      blank
-                      blank-color="#03989E"
-                      top
-                      :src="relevante.imagenes[0].imagen"
-                      :alt="relevante.nombre_propiedad"
-                    >
-                    </b-card-img-lazy>
-                  </template>
-                  <template>
-                    <div v-for="rel in relevante.amenidades" :key="rel.id">
-                      <template v-if="rel.nombre.includes('destacado')">
-                        <div>
-                          <img
-                            :alt="rel.nombre"
-                            :src="rel.icono"
-                            class="oferta"
-                          />
-                        </div>
-                      </template>
-                      <template v-if="rel.nombre.includes('oferta')">
-                        <div>
-                          <img
-                            :alt="rel.nombre"
-                            :src="rel.icono"
-                            class="tipoOferta"
-                          />
-                        </div>
-                      </template>
-                      <template v-else-if="rel.nombre.includes('preventa')">
-                        <div class="tipoPreventa">
-                          <img
-                            :alt="rel.nombre"
-                            :src="rel.icono"
-                            class="tipoPreventa"
-                          />
-                        </div>
-                      </template>
-                      <template v-else-if="rel.nombre.includes('entrega')">
-                        <div class="tipoEntrega">
-                          <img
-                            :alt="rel.nombre"
-                            :src="rel.icono"
-                            class="tipoEntrega"
-                          />
-                        </div>
-                      </template>
-                    </div>
-                  </template>
-                  <b-card-body class="p-0">
-                    <b-card-text class="precio">
-                      $ {{ relevante.precio.toLocaleString("es-MX") }} MXN
-                    </b-card-text>
-                  </b-card-body>
-                  <b-card-body>
-                    <b-card-text>
-                      <p class="descripcion">
-                        <font-awesome-icon
-                          icon="quote-left"
-                          class="color-secundario legible sombra mr-1"
-                        />{{ relevante.subtitulo }}
-                        <font-awesome-icon
-                          icon="quote-right"
-                          class="color-secundario legible sombra ml-1"
+                <template v-if="relevante.imagenes == 0">
+                  <b-card-img-lazy
+                    class="imagen-card"
+                    blank
+                    blank-color="#050A30"
+                    top
+                    :src="require('@/assets/load_house.jpg')"
+                    aly="Propiedad Sensum"
+                  >
+                  </b-card-img-lazy>
+                </template>
+                <template v-else>
+                  <b-card-img-lazy
+                    class="imagen-card"
+                    blank
+                    blank-color="#03989E"
+                    top
+                    :src="relevante.imagenes[0].imagen"
+                    :alt="relevante.nombre_propiedad"
+                  >
+                  </b-card-img-lazy>
+                </template>
+                <template>
+                  <div v-for="rel in relevante.amenidades" :key="rel.id">
+                    <template v-if="rel.nombre.includes('destacado')">
+                      <div>
+                        <img
+                          :alt="rel.nombre"
+                          :src="rel.icono"
+                          class="oferta"
                         />
-                      </p>
-                    </b-card-text>
-                  </b-card-body>
-                  <b-card-body class="p-0 mx-0 ">
-                    <b-container class="px-1">
-                      <b-row>
-                        <b-col cols="4" class="my-0 text-center">
-                          <p>
-                            <font-awesome-icon
-                              icon="cubes"
-                              size="lg"
-                              class="color-secundario legible"
-                            />
-                            <span class="mx-0" style="">
-                              {{
-                                relevante.construccion_metros.toLocaleString()
-                              }}
-                              m²
-                            </span>
-                          </p>
-                        </b-col>
-                        <b-col cols="4" class="my-0 text-center">
-                          <p>
-                            <font-awesome-icon
-                              icon="bed"
-                              size="lg"
-                              class="color-secundario legible"
-                            /><span class="mx-1">
-                              {{
-                                relevante.recamaras_con_closet +
-                                  relevante.recamaras_sin_closet
-                              }}</span
-                            >
-                          </p>
-                        </b-col>
-                        <b-col cols="4" class="my-0 text-center">
-                          <p>
-                            <font-awesome-icon
-                              icon="bath"
-                              size="lg"
-                              class="color-secundario legible"
-                            />
-                            <span class="mx-1">
-                              {{
-                                relevante.bano_completo +
-                                  relevante.medio_bano / 2
-                              }}
-                            </span>
-                          </p>
-                        </b-col>
-                        <!-- <b-col cols="3" class="my-0 text-center">
+                      </div>
+                    </template>
+                    <template v-if="rel.nombre.includes('oferta')">
+                      <div>
+                        <img
+                          :alt="rel.nombre"
+                          :src="rel.icono"
+                          class="tipoOferta"
+                        />
+                      </div>
+                    </template>
+                    <template v-else-if="rel.nombre.includes('preventa')">
+                      <div class="tipoPreventa">
+                        <img
+                          :alt="rel.nombre"
+                          :src="rel.icono"
+                          class="tipoPreventa"
+                        />
+                      </div>
+                    </template>
+                    <template v-else-if="rel.nombre.includes('entrega')">
+                      <div class="tipoEntrega">
+                        <img
+                          :alt="rel.nombre"
+                          :src="rel.icono"
+                          class="tipoEntrega"
+                        />
+                      </div>
+                    </template>
+                  </div>
+                </template>
+                <b-card-body class="p-0">
+                  <b-card-text class="precio">
+                    $ {{ relevante.precio.toLocaleString("es-MX") }} MXN
+                  </b-card-text>
+                </b-card-body>
+                <b-card-body>
+                  <b-card-text>
+                    <p class="descripcion">
+                      <font-awesome-icon
+                        icon="quote-left"
+                        class="color-secundario legible sombra mr-1"
+                      />{{ relevante.subtitulo }}
+                      <font-awesome-icon
+                        icon="quote-right"
+                        class="color-secundario legible sombra ml-1"
+                      />
+                    </p>
+                  </b-card-text>
+                </b-card-body>
+                <b-card-body class="p-0 mx-0 ">
+                  <b-container class="px-1">
+                    <b-row>
+                      <b-col cols="4" class="my-0 text-center">
+                        <p>
+                          <font-awesome-icon
+                            icon="cubes"
+                            size="lg"
+                            class="color-secundario legible"
+                          />
+                          <span class="mx-0" style="">
+                            {{ relevante.construccion_metros.toLocaleString() }}
+                            m²
+                          </span>
+                        </p>
+                      </b-col>
+                      <b-col cols="4" class="my-0 text-center">
+                        <p>
+                          <font-awesome-icon
+                            icon="bed"
+                            size="lg"
+                            class="color-secundario legible"
+                          /><span class="mx-1">
+                            {{
+                              relevante.recamaras_con_closet +
+                                relevante.recamaras_sin_closet
+                            }}</span
+                          >
+                        </p>
+                      </b-col>
+                      <b-col cols="4" class="my-0 text-center">
+                        <p>
+                          <font-awesome-icon
+                            icon="bath"
+                            size="lg"
+                            class="color-secundario legible"
+                          />
+                          <span class="mx-1">
+                            {{
+                              relevante.bano_completo + relevante.medio_bano / 2
+                            }}
+                          </span>
+                        </p>
+                      </b-col>
+                      <!-- <b-col cols="3" class="my-0 text-center">
                         <p>
                           <font-awesome-icon
                             icon="car"
@@ -186,65 +178,41 @@
                           <span class="mx-1"> 2</span>
                         </p>
                       </b-col> -->
-                      </b-row>
-                    </b-container>
-                  </b-card-body>
-                </b-card>
-              </slide>
-            </carousel>
-          </template>
-          <template v-else>
-            <b-container
-              class="py-3"
-              data-aos="fade-up"
-              data-aos-duration="3000"
-            >
-              <b-row class="text-center bg-hero curva">
-                <b-col cols="12" class="py-3">
-                  <h3 class=" color-gris">
-                    Por el momento no contamos con una propiedad relevante, en
-                    Sensum somos profesionales que siempre aportaremos valor a
-                    tu búsqueda puedes consultar nuestro catalogo de propiedades
-                    para conocer nuestra oferta
-                  </h3>
-                </b-col>
-              </b-row>
-            </b-container>
-          </template>
+                    </b-row>
+                  </b-container>
+                </b-card-body>
+              </b-card>
+               </router-link>
+          <div v-if="mostrarModalRel" class="modal-route " style="overflow:scroll">
+            <router-view :destacado="destacado"> </router-view>
+          </div>
+
+            </slide>
+          </carousel>
         </b-col>
+      </template>
+      <template v-else>
+        <b-container class="py-3" data-aos="fade-up" data-aos-duration="3000">
+          <b-row class="text-center bg-hero curva">
+            <b-col cols="12" class="py-3">
+              <h3 class=" color-gris">
+                Por el momento no contamos con una propiedad relevante, en
+                Sensum somos profesionales que siempre aportaremos valor a tu
+                búsqueda puedes consultar nuestro catalogo de propiedades para
+                conocer nuestra oferta
+              </h3>
+            </b-col>
+          </b-row>
+        </b-container>
       </template>
     </b-row>
   </b-container>
 </template>
 
 <script>
-import sensumService from "@/services/sensumService.js";
-import Loading from "@/components/Loading";
 export default {
   name: "Relevantes",
-  components: {
-    Loading,
-  },
-  data() {
-    return {
-      relevantes: [],
-      loading: false,
-    };
-  },
-  beforeMount() {
-    this.loading = true;
-    sensumService
-      .getPropiedades()
-      .then((response) => {
-        this.relevantes = response.data.filter((amenidad) => {
-          return amenidad.amenidades.length > 0;
-        });
-      })
-      .catch((error) => {
-        console.log(error);
-      })
-      .finally((this.loading = false));
-  },
+  props: ["relevantes"],
   computed: {
     destacado() {
       return this.relevantes.filter((propiedad) => {
@@ -252,6 +220,19 @@ export default {
           return amenidad.nombre.includes("destacado");
         });
       });
+    },
+  },
+  data() {
+    return {
+      mostrarModalRel: false,
+    };
+  },
+  watch: {
+    $route: {
+      immediate: true,
+      handler: function(newVal) {
+        this.mostrarModalRel = newVal.meta && newVal.meta.mostrarModalRel;
+      },
     },
   },
 };

@@ -21,7 +21,7 @@
             <b-carousel-slide caption="Avalúos para INFONAVIT y FOVISSSTE" >
               <template v-slot:img>
                 <img
-                  src="@/assets/servicios/aiei.png"
+                  src="@/assets/servicios/aiei.jpg"
                   alt="Avalúos para INFONAVIT y FOVISSSTE"
                   class="img-fluid curva shadow-sm"
                 />
@@ -30,7 +30,7 @@
             <b-carousel-slide caption="Avalúos para Tesorería">
               <template v-slot:img>
                 <img
-                  src="@/assets/servicios/at.png"
+                  src="@/assets/servicios/at.jpg"
                   alt="Avalúos para Tesorería"
                   class="img-fluid curva shadow-sm"
                 />
@@ -39,7 +39,7 @@
             <b-carousel-slide caption="Elaboración de Programas de Obra">
               <template v-slot:img>
                 <img
-                  src="@/assets/servicios/epo.png"
+                  src="@/assets/servicios/epo.jpg"
                   alt="Elaboración de Programas de Obra"
                   class="img-fluid curva shadow-sm"
                 />
@@ -48,7 +48,7 @@
             <b-carousel-slide caption="Elaboración de Planos">
               <template v-slot:img>
                 <img
-                  src="@/assets/servicios/ep.png"
+                  src="@/assets/servicios/ep.jpg"
                   alt="Elaboración de Planos"
                   class="img-fluid curva shadow-sm"
                 />
@@ -57,7 +57,7 @@
             <b-carousel-slide caption="Gestoría para Tramitación de Certificados">
               <template v-slot:img>
                 <img
-                  src="@/assets/servicios/gtacmd.png"
+                  src="@/assets/servicios/gtacmd.jpg"
                   alt="Gestoría para Tramitación de Certificados"
                   class="img-fluid curva shadow-sm"
                 />
@@ -66,7 +66,7 @@
             <b-carousel-slide caption="Inscripción de créditos INFONAVIT">
               <template v-slot:img>
                 <img
-                  src="@/assets/servicios/aci.png"
+                  src="@/assets/servicios/aci.jpg"
                   alt="Inscripción de créditos INFONAVIT"
                   class="img-fluid curva shadow-sm"
                 />

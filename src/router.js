@@ -37,7 +37,8 @@ const routes = [
                 meta:{
                     mostrarModal: true
                 }
-            }
+            },
+
         ]
     }
 ];

@@ -28,7 +28,7 @@
         </b-col>
         <b-col cols="10" lg="4" class="my-5 mx-auto" align-self="center">
           <img
-                src="@/assets/servicios/sl.png"
+                src="@/assets/servicios/sl.jpg"
                 alt="Soluciones Legales"
                 class="img-fluid curva"
               />

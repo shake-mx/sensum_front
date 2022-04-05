@@ -7,20 +7,7 @@
         </h1>
       </b-col>
     </b-row>
-    <template v-if="propiedades.length === 0">
-      <b-container data-aos="fade-up" data-aos-duration="3000">
-        <b-row>
-          <b-col class="text-center">
-            <h3 class="color-primario">
-              Por el momento no hemos encontrado una propiedad con los valores
-              que buscas. Envía un correo con la propiedad que estas buscando.
-            </h3>
-          </b-col>
-        </b-row>
-      </b-container>
-      <Contacto />
-    </template>
-    <template v-else>
+    <template v-if="propiedades.length > 0">
       <b-row>
         <b-col
           cols="12"
@@ -30,7 +17,7 @@
           v-for="propiedad in propiedades"
           :key="propiedad.id"
         >
-          <router-link  :to="{ path: `/catalogo/${propiedad.folio}` }">
+          <router-link :to="{ path: `/catalogo/${propiedad.folio}` ,params: { id: 'folio' }}">
             <b-card
               data-aos="fade-up"
               data-aos-duration="3000"
@@ -45,7 +32,7 @@
                   blank
                   blank-color="#03989E"
                   top
-                  :src="require('@/assets/load_house.png')"
+                  :src="require('@/assets/load_house.jpg')"
                   aly="Propiedad Sensum"
                 >
                 </b-card-img-lazy>
@@ -92,9 +79,7 @@
                           class="color-secundario legible "
                         />
                         <span class="mx-0" style="">
-                          {{
-                            propiedad.construccion_metros.toLocaleString()
-                          }}
+                          {{ propiedad.construccion_metros.toLocaleString() }}
                           m²
                         </span>
                       </p>
@@ -147,6 +132,19 @@
           </div>
         </b-col>
       </b-row>
+    </template>
+    <template v-else>
+      <b-container data-aos="fade-up" data-aos-duration="3000">
+        <b-row>
+          <b-col class="text-center">
+            <h3 class="color-primario">
+              Por el momento no hemos encontrado una propiedad con los valores
+              que buscas. Envía un correo con la propiedad que estas buscando.
+            </h3>
+          </b-col>
+        </b-row>
+      </b-container>
+      <Contacto />
     </template>
   </b-container>
 </template>

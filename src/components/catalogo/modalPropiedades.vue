@@ -31,7 +31,7 @@
                 img-width="800"
                 img-height="800"
               >
-                <template v-if="filtro.imagenes">
+                <template v-if="filtro.imagenes != 0">
                   <b-carousel-slide
                     v-for="imagen in filtro.imagenes"
                     :key="imagen.id"
@@ -40,7 +40,7 @@
                 </template>
                 <template v-else>
                   <b-carousel-slide
-                    :img-src="require('@/assets/load_house.png')"
+                    :img-src="require('@/assets/load_house.jpg')"
                   ></b-carousel-slide>
                 </template>
               </b-carousel>
@@ -186,7 +186,7 @@
                   </template>
                   <template v-else>
                     <b-avatar
-                      :src="require('@/assets/ava.png')"
+                      :src="require('@/assets/ava.jpg')"
                       size="10rem"
                     ></b-avatar>
                   </template>

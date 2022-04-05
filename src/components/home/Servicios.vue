@@ -6,7 +6,7 @@
           <b-row class="justify-content-between my-1" align-v="stretch">
             <b-col md="4" class="my-5">
               <img
-                src="@/assets/servicios/01.png"
+                src="@/assets/servicios/01.jpg"
                 alt="Asesoría Inmobiliaria"
                 class="img-fluid curva"
               />
@@ -23,7 +23,7 @@
             </b-col>
             <b-col md="4" class="my-5">
               <img
-                src="@/assets/servicios/02.png"
+                src="@/assets/servicios/02.jpg"
                 alt="Asesoría Inmobiliaria"
                 class="img-fluid curva"
               />
@@ -42,7 +42,7 @@
 
             <b-col md="4" class="my-5">
               <img
-                src="@/assets/servicios/03.png"
+                src="@/assets/servicios/03.jpg"
                 alt="Asesoría Inmobiliaria"
                 class="img-fluid curva"
               />
@@ -64,7 +64,7 @@
           <b-row class="justify-content-between my-5" align-v="stretch">
             <b-col md="4" class="my-5">
               <img
-                src="@/assets/servicios/04.png"
+                src="@/assets/servicios/04.jpg"
                 alt="Asesoría Inmobiliaria"
                 class="img-fluid curva"
               />
@@ -82,7 +82,7 @@
 
             <b-col md="4" class="my-5">
               <img
-                src="@/assets/servicios/06.png"
+                src="@/assets/servicios/06.jpg"
                 alt="Asesoría Inmobiliaria"
                 class="img-fluid curva"
               />
@@ -100,7 +100,7 @@
             </b-col>
             <b-col md="4" class="my-5">
               <img
-                src="@/assets/servicios/05.png"
+                src="@/assets/servicios/05.jpg"
                 alt="Asesoría Inmobiliaria"
                 class="img-fluid curva"
               />
@@ -161,7 +161,7 @@
             </b-col>
             <b-col md="6" class="my-5">
               <img
-                src="@/assets/servicios/08.png"
+                src="@/assets/servicios/08.jpg"
                 alt="Asesoría Inmobiliaria"
                 class="img-fluid curva"
               />
@@ -184,7 +184,7 @@
             </b-col>
             <b-col md="6" class="my-5 order-md-0">
               <img
-                src="@/assets/servicios/07.png"
+                src="@/assets/servicios/07.jpg"
                 alt="Asesoría Inmobiliaria"
                 class="img-fluid curva"
               />

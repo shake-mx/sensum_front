@@ -32,7 +32,7 @@ export default {
 
 .bghero-parallax {
   height: 50vh;
-  background: url("~@/assets/heromd.png");
+  background: url("~@/assets/heromd.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -44,7 +44,7 @@ export default {
 @media only screen and (max-width: 768px) {
 .bghero-parallax {
   height: 50vh;
-  background: url("~@/assets/herosm.png");
+  background: url("~@/assets/herosm.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -55,7 +55,7 @@ export default {
 @media only screen and (max-width: 576px) {
 .bghero-parallax {
   height: 90vh;
-  background: url("~@/assets/herosm.png");
+  background: url("~@/assets/herosm.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

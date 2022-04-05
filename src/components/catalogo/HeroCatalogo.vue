@@ -206,8 +206,8 @@ export default {
       this.buscarRenta = "";
       this.buscarVenta = "";
       this.propiedadCatalogo = "Propiedad";
-      this.min = 5000000;
-      this.max = 15000000;
+      this.min = "5000000";
+      this.max = "15000000";
       this.sinFiltro = true;
       this.$emit("filtroPropiedad", {
         buscarAnuncio: this.buscarAnuncio,
@@ -233,27 +233,32 @@ export default {
 <style lang="scss" scoped>
 .cocina {
   height: 75vh;
-  background: url("~@/assets/catalogo/cocina.png");
+  background: url("~@/assets/catalogo/cocina.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-attachment: initial;
+  
 }
 .sala {
   height: 75vh;
-  background: url("~@/assets/catalogo/sala.png");
+  background: url("~@/assets/catalogo/sala.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-attachment: initial;
+    filter: contrast(0.8);
+  -webkit-filter: contrast(0.8);
 }
 .recamara {
   height: 75vh;
-  background: url("~@/assets/catalogo/recamara.png");
+  background: url("~@/assets/catalogo/recamara.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-attachment: initial;
+  filter: contrast(0.8);
+  -webkit-filter: contrast(0.8);
 }
 
 .catalogo {

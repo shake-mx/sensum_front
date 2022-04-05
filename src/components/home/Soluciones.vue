@@ -21,7 +21,7 @@
           <b-row class="justify-content-between my-1" align-v="stretch">
             <b-col md="4" class="my-5">
               <img
-                src="@/assets/servicios/ai.png"
+                src="@/assets/servicios/ai.jpg"
                 alt="Asesoría Inmobiliaria"
                 class="img-fluid curva"
               />
@@ -37,7 +37,7 @@
             </b-col>
             <b-col md="4" class="my-5">
               <img
-                src="@/assets/servicios/efc.png"
+                src="@/assets/servicios/efc.jpg"
                 alt="Estudio de Factibilidad Comercial"
                 class="img-fluid curva"
               />
@@ -54,7 +54,7 @@
 
             <b-col md="4" class="my-5">
               <img
-                src="@/assets/servicios/me.png"
+                src="@/assets/servicios/me.jpg"
                 alt="Marketing Especializado"
                 class="img-fluid curva"
               />
@@ -74,7 +74,7 @@
           <b-row class="justify-content-between my-5" align-v="stretch">
             <b-col md="4" class="my-5">
               <img
-                src="@/assets/servicios/mi.png"
+                src="@/assets/servicios/mi.jpg"
                 alt="Mediación Inmobiliaria"
                 class="img-fluid curva"
               />
@@ -91,7 +91,7 @@
 
             <b-col md="4" class="my-5">
               <img
-                src="@/assets/servicios/gi.png"
+                src="@/assets/servicios/gi.jpg"
                 alt="Gestoría Inmobiliaria"
                 class="img-fluid curva"
               />
@@ -108,7 +108,7 @@
             </b-col>
             <b-col md="4" class="my-5">
               <img
-                src="@/assets/servicios/rat.png"
+                src="@/assets/servicios/rat.jpg"
                 alt="Representación Ante Terceros"
                 class="img-fluid curva"
               />
@@ -128,7 +128,7 @@
           <b-row class="justify-content-around my-5" align-v="stretch">
             <b-col md="4" class="my-5">
               <img
-                src="@/assets/servicios/cprv.png"
+                src="@/assets/servicios/cprv.jpg"
                 alt="Catálogo de Propiedades en Venta y Renta"
                 class="img-fluid curva"
               />
@@ -145,7 +145,7 @@
 
             <b-col md="4" class="my-5">
               <img
-                src="@/assets/servicios/aich.png"
+                src="@/assets/servicios/aich.jpg"
                 alt="Asesoría e Intermediación en Créditos Hipotecarios"
                 class="img-fluid curva"
               />
@@ -180,7 +180,7 @@ export default {
 
 
 .bghero-parallax {
-  background: url("~@/assets/hero1.png");
+  background: url("~@/assets/hero1.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -190,7 +190,7 @@ export default {
 
 @media only screen and (max-width: 768px) {
 .bghero-parallax {
-  background: url("~@/assets/hero1.png");
+  background: url("~@/assets/hero1.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -200,7 +200,7 @@ export default {
 
 @media only screen and (max-width: 576px) {
 .bghero-parallax {
-  background: url("~@/assets/hero1.png");
+  background: url("~@/assets/hero1.jpg");
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: initial;
