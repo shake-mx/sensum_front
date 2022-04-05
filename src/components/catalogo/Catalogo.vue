@@ -136,6 +136,16 @@ export default {
       handler: "actualizarPropiedad",
     },
   },
+  metaInfo:{
+    title: 'Catálogo de Propiedades Sensum, CDMX y Área Metropolitana',
+    meta: [
+      {
+        name: 'description',
+        content: 'Contamos con una amplia variedad de propiedades en venta y renta en CDMX y Área Metropolitana. Encuentra la propiedad que necesitas.'
+      },
+
+    ]
+  } 
 };
 </script>
 

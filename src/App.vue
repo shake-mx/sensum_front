@@ -8,9 +8,7 @@
 
 export default {
   name: 'App',
-  created () {
-            document.title = "Sensum Soluciones Inmobiliarias";
-        },
+ 
 
 }
 </script>

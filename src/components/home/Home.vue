@@ -51,6 +51,15 @@ export default {
     Testimoniales,
     Footer
   },
+  metaInfo:{
+    title: 'Sensum Soluciones Inmobiliarias',
+    meta: [
+      {
+        name: 'description',
+        content: 'Somos profesionales especializados en la comercialización de inmuebles Nuevos, en Preventa y Seminuevos.'
+      }
+    ]
+  },
 
 };
 </script>

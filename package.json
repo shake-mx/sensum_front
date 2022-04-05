@@ -23,6 +23,7 @@
     "vue": "^2.6.12",
     "vue-axios": "^3.2.4",
     "vue-carousel": "^0.18.0",
+    "vue-meta": "^2.4.0",
     "vue-moment": "^4.1.0",
     "vue-router": "^3.5.3",
     "vue-scrollto": "^2.20.0"

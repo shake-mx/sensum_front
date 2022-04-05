@@ -290,6 +290,25 @@ export default {
       return null;
     },
   },
+ metaInfo(){
+   return {
+      title: this.filtro.nombre_propiedad,
+      meta: [
+        {
+          name: "description",
+          content: this.filtro.descripción,
+        },
+        {
+          name: 'image',
+          content: this.filtro.imagenes[0].imagen,
+        },
+        {
+          name: 'property',
+          content: "Sensum Soluciones Inmobiliarias con Sentido Humano",
+        }
+      ],
+    };
+   }
 };
 </script>
 
