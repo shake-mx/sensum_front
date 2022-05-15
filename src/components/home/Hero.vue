@@ -16,25 +16,25 @@
         </b-col>
       </b-row>
     </b-container>
-    <b-container >
+    <b-container>
       <b-row>
-        <b-col >
-          <b-modal
-            ref="my-modal"
-            hide-footer
-            scrollable
-            hide-title
-          >
+        <b-col>
+          <b-modal ref="my-modal" hide-footer scrollable hide-title>
             <b-container>
               <b-row>
                 <b-col v-for="portada in portadas" :key="portada.id">
-                  <b-img :src="portada.modal_imagen" :alt="portada.modal_subtitulo" fluid class="curva"></b-img>
-                  <h3 class="color-secundario text-center py-5">{{portada.modal_titulo}}</h3>
+                  <b-img
+                    :src="portada.modal_imagen"
+                    :alt="portada.modal_subtitulo"
+                    fluid
+                    class="curva"
+                  ></b-img>
+                  <h3 class="color-secundario text-center py-5">
+                    {{ portada.modal_titulo }}
+                  </h3>
                 </b-col>
               </b-row>
             </b-container>
-           
-            
           </b-modal>
         </b-col>
       </b-row>
@@ -65,7 +65,6 @@ export default {
       this.portadas = response.data;
     });
   },
- 
 };
 </script>
 
@@ -88,5 +87,14 @@ export default {
     background-size: cover;
     background-attachment: initial;
   }
+}
+
+::v-deep .modal-content {
+  margin-top: 20% !important;
+  border-radius: 15px;
+}
+
+::v-deep .modal-header {
+  border-bottom: 0px solid #dee2e6;
 }
 </style>

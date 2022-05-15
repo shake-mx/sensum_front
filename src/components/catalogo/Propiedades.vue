@@ -71,7 +71,7 @@
               <b-card-body class="p-0 mx-0">
                 <b-container class="px-1">
                   <b-row>
-                    <b-col cols="4" class=" text-center">
+                    <b-col cols="3" class=" text-center">
                       <p>
                         <font-awesome-icon
                           icon="cubes"
@@ -84,7 +84,7 @@
                         </span>
                       </p>
                     </b-col>
-                    <b-col cols="4" class=" text-center">
+                    <b-col cols="3" class=" text-center">
                       <p>
                         <font-awesome-icon
                           icon="bed"
@@ -98,7 +98,7 @@
                         >
                       </p>
                     </b-col>
-                    <b-col cols="4" class=" text-center">
+                    <b-col cols="3" class=" text-center">
                       <p>
                         <font-awesome-icon
                           icon="bath"
@@ -109,19 +109,20 @@
                           {{
                             propiedad.bano_completo + propiedad.medio_bano / 2
                           }}
+                       
                         </span>
                       </p>
                     </b-col>
-                    <!-- <b-col cols="3" class=" text-center">
+                    <b-col cols="3" class=" text-center">
                     <p>
                       <font-awesome-icon
                         icon="car"
                         size="lg"
                         class="color-secundario legible "
                       />
-                      <span class="mx-1"> 2</span>
+                      <span class="mx-1">{{propiedad.estacionamiento}} </span>
                     </p>
-                  </b-col> -->
+                  </b-col>
                   </b-row>
                 </b-container>
               </b-card-body>

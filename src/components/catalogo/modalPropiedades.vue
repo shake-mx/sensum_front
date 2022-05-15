@@ -104,6 +104,18 @@
                         </span>
                       </h5>
                     </b-col>
+                    <b-col>
+                      <h5>
+                        <font-awesome-icon
+                          icon="car"
+                          size="2x"
+                          class="color-secundario legible "
+                        />
+                        <span class="mx-1">
+                          {{ filtro.estacionamiento }}
+                        </span>
+                      </h5>
+                    </b-col>
                     <b-col cols="12" class="my-3">
                       <h5 class="color-primario">
                         <font-awesome-icon
@@ -137,19 +149,14 @@
                         />
                         <span class="ml-2 font-weight-bolder">
                           {{
-                            "La propiedad tiene una longitud de " +
+                            "La propiedad cuenta con " +
                               (filtro
-                                ? filtro.terreno_metros.toLocaleString()
-                                : "" + " m² de superficie, ") +
-                              "de los cuales " +
+                                ? filtro.terreno_metros.toLocaleString() + " m² de terreno, "
+                                : "" + " m² de terreno ") +
+                              "y " +
                               (filtro
-                                ? filtro.construccion_metros.toLocaleString()
-                                : "" + " m² son de construcción. ") +
-                              "Cuenta con " +
-                              filtro.niveles +
-                              " nivel(es) " +
-                              "y su uso de suelo es " +
-                              (usoSuelo + ".")
+                                ? filtro.construccion_metros.toLocaleString() + " m² de construcción. "
+                                : "" + " m² de construcción.") 
                           }}
                           <br />{{
                             "Principales características: " +
@@ -216,6 +223,16 @@
                     />
                     {{ filtro ? filtro.agente.correo : "informes@sensum.mx" }}
                   </h5>
+                  <a :href="`https://api.whatsapp.com/send?text=https://sensum.mx/catalogo/${filtro.folio}+ +Mira+la+Propiedad+${filtro.nombre_propiedad} `" data-action="share/whatsapp/share" target="_blank">
+                  <h5 class="color-texto text-center ">
+                    <font-awesome-icon
+                      class="color-acento espacio mr-3"
+                      size="lg"
+                      :icon="['fas', 'share']"
+                    />
+                   Compartir
+                  </h5>
+                  </a>
                 </b-col>
 
                 <b-col cols="8" class="mt-3 mx-auto">

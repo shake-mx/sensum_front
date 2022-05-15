@@ -127,7 +127,7 @@
                 <b-card-body class="p-0 mx-0 ">
                   <b-container class="px-1">
                     <b-row>
-                      <b-col cols="4" class="my-0 text-center">
+                      <b-col cols="3" class="my-0 text-center">
                         <p>
                           <font-awesome-icon
                             icon="cubes"
@@ -140,7 +140,7 @@
                           </span>
                         </p>
                       </b-col>
-                      <b-col cols="4" class="my-0 text-center">
+                      <b-col cols="3" class="my-0 text-center">
                         <p>
                           <font-awesome-icon
                             icon="bed"
@@ -154,7 +154,7 @@
                           >
                         </p>
                       </b-col>
-                      <b-col cols="4" class="my-0 text-center">
+                      <b-col cols="3" class="my-0 text-center">
                         <p>
                           <font-awesome-icon
                             icon="bath"
@@ -168,16 +168,16 @@
                           </span>
                         </p>
                       </b-col>
-                      <!-- <b-col cols="3" class="my-0 text-center">
+                      <b-col cols="3" class="my-0 text-center">
                         <p>
                           <font-awesome-icon
                             icon="car"
                             size="lg"
                             class="color-secundario legible"
                           />
-                          <span class="mx-1"> 2</span>
+                          <span class="mx-1"> {{relevante.estacionamiento}}</span>
                         </p>
-                      </b-col> -->
+                      </b-col>
                     </b-row>
                   </b-container>
                 </b-card-body>
