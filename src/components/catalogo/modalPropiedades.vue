@@ -316,10 +316,6 @@ export default {
           content: this.filtro.descripción,
         },
         {
-          name: 'image',
-          content: this.filtro.imagenes[0].imagen,
-        },
-        {
           name: 'property',
           content: "Sensum Soluciones Inmobiliarias con Sentido Humano",
         }

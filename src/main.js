@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue';
 
-import VueMeta from 'vue-meta';
+
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -18,8 +18,9 @@ import { faAngellist, faFacebook, faFacebookF, faFacebookSquare, faInstagramSqua
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import VueRouter from 'vue-router';
 import router from "./router";
-import VueMoment from 'vue-moment'
-import moment from 'moment-timezone'
+import VueMoment from 'vue-moment';
+import moment from 'moment-timezone';
+import VueMeta from 'vue-meta';
 
 library.add( faShare,faAngleUp,faClipboardCheck,faUser,faUserCheck,faTimes,faEnvelope, faHome, faMapMarkerAlt, faPhoneAlt, faUserSecret, faMapMarkedAlt, faBed, faFacebook, faFacebookF, faFacebookSquare, faInstagramSquare, faPinterestSquare, faTiktok,  faWhatsapp,  faYoutubeSquare,faCubes,faBath,faCar,faPagelines,faPaw,faQuoteLeft,faQuoteRight,faExclamationCircle, faAngellist);
 
