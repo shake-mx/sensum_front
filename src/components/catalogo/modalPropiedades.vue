@@ -30,6 +30,8 @@
                 controls
                 img-width="800"
                 img-height="800"
+                v-model="slide"
+                :interval="interval" 
               >
                 <template v-if="filtro.imagenes != 0">
                   <b-carousel-slide
@@ -277,7 +279,12 @@ export default {
       propiedad: "",
       find: [],
       phoneNumberString: "",
+      slide: 0,
+      interval: 3000
     };
+  },
+  mounted(){
+    this.interval = 0;
   },
   computed: {
     filtro() {
